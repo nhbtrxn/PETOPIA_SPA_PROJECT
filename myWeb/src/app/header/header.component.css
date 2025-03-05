@@ -1,0 +1,126 @@
+ *, *::before, *::after {
+    box-sizing: border-box;
+}
+.entire-header {
+    width: 100%;
+    margin: 0;
+    font-family: "EB Garamond", serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+}
+.content {
+    margin-top: 200px;
+}
+.top-header {
+    background-color: #e3ccbd;
+    text-align: center;
+    padding: 8px;
+}
+.top-header h1 {
+    margin: 0;
+    color: #4f2b1a;
+    font-weight: bold;
+    font-size: 12pt;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #4f2b1a;
+    color: white;
+    padding: 10px 10px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo h2 {
+    font-size: 14pt;
+    margin-left: 10px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 260px;
+    background-color: white;
+    box-shadow: 2px 2px 8px rgb(0, 0, 0);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.search-bar:hover {
+    box-shadow: 3px 3px 12px #e3ccbd;
+}
+.search-bar input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+}
+.search-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-left: 1px solid #ccc;
+}
+.search-btn img {
+    width: 5px;
+    height: 5px;
+}
+.cart img {
+    width: 24px;
+    height: 24px;
+}
+.header-right-section {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+    gap: 50px;
+}
+.booking {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.booking img {
+    width: 24px;
+    height: 24px;
+}
+.booking h3 {
+    margin: 0;
+    font-size: 12pt;
+}
+.booking h4 {
+    margin: 0;
+    font-size: 10pt;
+}
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.greeting-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #e3ccbd;
+    padding: 10px 0;
+    border-top: 1px solid #ffffff;
+}
+.nav-bar a {
+    color: #4f2b1a;
+    font-size: 12pt;
+    text-decoration: none;
+    font-weight: bold;
+}
