@@ -2,24 +2,23 @@
     <div class="top-header">
         <h1>PETOPIA SPA - Nơi yêu thương bắt đầu từ việc chăm sóc!</h1>
     </div>
-    <header>
+    <header class="main-header">
         <div class="logo">
-            <img src="" alt="Logo">
-            <!-- <h2>PETOPIA SPA</h2> -->
+            <img src="https://imgur.com/LPXHM85h.png" alt="Logo">
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Tìm kiếm sản phẩm/dịch vụ">
             <button class="search-btn">
-                <img src="" alt="icon">
+                <img src="https://i.imgur.com/QLkK8fa.png" alt="icon">
             </button>
         </div>
         <div class="cart">
-            <a href=""><img src="" alt="Giỏ hàng"></a>
+            <a href=""><img src="https://i.imgur.com/JzrwIh9.png" alt="Giỏ hàng"></a>
         </div>
         <div class="header-right-section">
             <div class="booking">
                 <div class="booking-icon">
-                    <a href=""><img src="" alt="Đặt lịch"></a>
+                    <a href=""><img src="https://i.imgur.com/rvPGQ6P.png" alt="Đặt lịch"></a>
                 </div>
                 <div class="booking-text">
                     <h3>ĐẶT LỊCH NGAY</h3>
@@ -28,13 +27,14 @@
             </div>
             <div class="greeting">
                 <div class="greeting-icon">
-                    <img src="user-icon.png" alt="User Avatar">
+                    <img src="https://i.imgur.com/bru6iBX.png" alt="User Avatar">
                 </div>
                 <p>Xin chào, A</p>
             </div>
         </div>
     </header>
-    <nav class="nav-bar">
+    <button class="menu-btn" (click)="toggleMenu()">☰</button>
+    <nav class="nav-bar" [class.show]="isMenuOpen">
         <a href="">DỊCH VỤ & SẢN PHẨM</a>
         <a href="">ĐẶT LỊCH</a>
         <a href="">DIỄN ĐÀN</a>
@@ -45,7 +45,7 @@
         <a href="">LIÊN HỆ</a>
     </nav>
 </div>
-<div class="content">
+<!-- <div class="content">
     <p>Content</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio perspiciatis minima excepturi neque, quae corporis reiciendis fugiat eveniet impedit obcaecati nostrum accusamus nihil soluta eum ea quod rerum enim!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio perspiciatis minima excepturi neque, quae corporis reiciendis fugiat eveniet impedit obcaecati nostrum accusamus nihil soluta eum ea quod rerum enim!</p>
@@ -61,4 +61,4 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio perspiciatis minima excepturi neque, quae corporis reiciendis fugiat eveniet impedit obcaecati nostrum accusamus nihil soluta eum ea quod rerum enim!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio perspiciatis minima excepturi neque, quae corporis reiciendis fugiat eveniet impedit obcaecati nostrum accusamus nihil soluta eum ea quod rerum enim!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio perspiciatis minima excepturi neque, quae corporis reiciendis fugiat eveniet impedit obcaecati nostrum accusamus nihil soluta eum ea quod rerum enim!</p>
-</div>
+</div> -->

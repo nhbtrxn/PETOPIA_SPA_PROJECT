@@ -4,8 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-header',
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  isMenuOpen = false; // Biến kiểm soát menu mở/đóng
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen; // Đảo trạng thái menu
+  }
 }
