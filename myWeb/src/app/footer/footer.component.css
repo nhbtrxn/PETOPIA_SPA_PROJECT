@@ -1,0 +1,99 @@
+.site-footer {
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.footer-top-content {
+    background-color: #e3ccbd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.social-icons img {
+    width: 30px;
+    margin: 0 5px;
+}
+h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #4f2b1a;
+}
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.newsletter-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-form button {
+    padding: 8px 15px;
+    background-color: #4f2b1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 25px;
+    text-align: left;
+}
+h4 {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #4f2b1a;
+}
+.footer-grid p {
+    padding-top: 10px;
+    font-size: 10pt;
+}
+.footer-policy ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-policy ul li {
+    margin-bottom: 5px;
+}
+.footer-logo {
+    width: 50px;
+}
+.logo-name {
+    display: flex; /* Dùng flexbox để xếp ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Tạo khoảng cách giữa ảnh và chữ */
+}
+.payment-icons img {
+    width: auto;
+    height: 80px;
+}
+.payment-icons {
+    display: flex;
+    gap: 10px;
+}
+.gov-logo {
+    display: block;
+    margin-top: 10px;
+}
+.gov-logo img {
+    width: 200px;
+}
+/* === Footer Bottom === */
+.footer-bottom {
+    padding-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
