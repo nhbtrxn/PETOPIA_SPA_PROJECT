@@ -1,0 +1,50 @@
+<div class="booking-container">
+    <h2>Vui lòng điền đầy đủ thông tin dưới đây:</h2>
+    <form class="booking-form">
+        <div class="form-section">
+            <h3>THÔNG TIN KHÁCH HÀNG</h3>
+            <label>Họ và Tên</label>
+            <input type="text" name="name" required>
+            <label>Giới tính</label>
+            <select name="gender">
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+                <option value="other">Khác</option>
+            </select>
+            <label>Ngày sinh</label>
+            <input type="date" name="dob">
+            <label>Số điện thoại</label>
+            <input type="tel" name="phone" required>
+            <label>Ghi chú (nếu có)</label>
+            <textarea name="notes"></textarea>
+        </div>
+        <div class="form-section">
+            <h3>THÔNG TIN DỊCH VỤ</h3>
+            <label>Chọn Dịch vụ (có thể chọn nhiều)</label>
+            <div class="custom-select" (click)="toggleDropdown()">
+                <span *ngIf="selectedServices.length === 0">Chọn dịch vụ</span>
+                <span *ngIf="selectedServices.length > 0" class="selected-placeholder">
+                    Đã chọn ({{ selectedServices.length }})
+                </span>
+                <span class="arrow">▼</span>
+            </div>
+            <ul *ngIf="isDropdownOpen" class="dropdown-list">
+                <li *ngFor="let service of services" (click)="selectService(service)">
+                    {{ service }}
+                </li>
+            </ul>
+            <div class="selected-services">
+                <span *ngFor="let service of selectedServices" class="selected-item">
+                    {{ service }} <span (click)="removeService(service)" class="remove">x</span>
+                </span>
+            </div>
+            <label>Chọn Ngày và Giờ</label>
+            <input type="datetime-local" name="appointment">
+            <label>Địa chỉ</label>
+            <input type="text" value="669, Đỗ Mười, Linh Xuân, Thủ Đức" readonly>
+        </div>
+        <div class="confirm">
+            <button type="submit">Xác nhận đặt lịch</button>
+        </div>
+    </form>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,4 +13,11 @@ export class HeaderComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen; // Đảo trạng thái menu
   }
+
+  constructor(private router: Router) {}
+
+  goToBooking() {
+    this.router.navigate(['/booking']);
+  }
+
 }
