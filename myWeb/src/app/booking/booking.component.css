@@ -1,0 +1,125 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.booking-container {
+    font-family: sans-serif;
+    background-color: #e3ccbd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15%;
+    color: black;
+    position: relative;
+}
+h2 {
+    text-align: left;
+    font-size: 12pt;
+    font-weight: bold;
+}
+h3 {
+    font-size: 12pt;
+    text-align: center;
+    font-weight: bold;
+}
+.booking-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.form-section {
+    width: 48%;
+}
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #bc946e;
+    border-radius: 15px;
+}
+textarea {
+    height: 60px;
+}
+.custom-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bc946e;
+    border-radius: 15px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.arrow {
+    font-size: 14px;
+    color: #4f2b1a;
+}
+
+.dropdown-list {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #b68d5f;
+    border-radius: 10px;
+    list-style: none;
+    padding: 5px;
+    margin-top: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.dropdown-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+.dropdown-list li:hover {
+    background: #e0994c;
+}
+.selected-services {
+    margin-top: 10px;
+}
+.selected-item {
+    display: inline-flex;
+    align-items: center;
+    background: #b68d5f;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+.remove {
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 3px;
+    color: #e3ccbd;
+}
+button {
+    width: 50%;
+    /* margin-top: 20px; */
+    padding: 10px;
+    background-color: #e3ccbd;
+    color: #4f2b1a;
+    border: 1px solid #4f2b1a;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #4f2b1a;
+    color: white;
+}
+.confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
