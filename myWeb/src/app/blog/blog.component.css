@@ -1,0 +1,40 @@
+.blog-container {
+    margin: 15% auto 0; /* Căn giữa theo chiều ngang */
+    display: flex;
+    justify-content: center; /* Căn giữa các phần tử con */
+    gap: 10px;
+    font-family: sans-serif;
+    width: 80%;
+    max-width: 1200px; /* Giới hạn chiều rộng để không bị quá lớn trên màn hình rộng */
+}
+.post-list {
+    width: 30%;
+    background-color: #5D3A2E;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+.post-list h3 {
+    text-align: center;
+}
+.post-list ul {
+    list-style: none;
+    padding: 0;
+}
+  .post-list li {
+    margin: 10px 0;
+}
+.post-list a {
+    color: white;
+    text-decoration: none;
+}
+.post-content {
+    width: 70%;
+    background-color: #E6C9B2;
+    padding: 15px;
+    border-radius: 10px;
+}
+  .post-detail-container h2 {
+    margin-top: 0;
+}
+  

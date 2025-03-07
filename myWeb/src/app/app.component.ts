@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookingComponent } from './booking/booking.component';
+import { BlogComponent } from './blog/blog.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, BookingComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, BookingComponent, BlogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
