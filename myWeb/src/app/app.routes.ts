@@ -1,19 +1,18 @@
-// import { Routes } from '@angular/router';
-
-// export const routes: Routes = [];
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
-import { PostDetailComponent } from './blog/post-detail/post-detail.component';
+import { BookingComponent } from './booking/booking.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { FaqComponent } from './pages/faq/faq.component';
+import { PolicyComponent } from './pages/policy/policy.component';
 
-export const routes: Routes = [
-  { path: '', redirectTo: 'blog', pathMatch: 'full' },
+export const AppRoutes: Routes = [
   { path: 'blog', component: BlogComponent },
-  { path: 'blog/:id', component: PostDetailComponent }, // Route để hiển thị bài viết cụ thể
+  { path: 'booking', component: BookingComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'faq', component: FaqComponent },
+  { path: 'policy', component: PolicyComponent },
+  { path: '', redirectTo: '/blog', pathMatch: 'full' }, // Trang mặc định
+  { path: '**', redirectTo: '/blog' } // Xử lý trang không tồn tại
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
