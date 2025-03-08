@@ -38,14 +38,15 @@
     </header>
     <button class="menu-btn" (click)="toggleMenu()">☰</button>
     <nav class="nav-bar" [class.show]="isMenuOpen">
-        <a href="">DỊCH VỤ & SẢN PHẨM</a>
-        <a href="/src/app/booking/booking.component.html">ĐẶT LỊCH</a>
-        <a href="">DIỄN ĐÀN</a>
-        <a href="">KINH NGHIỆM HAY</a>
-        <a href="">GIỚI THIỆU</a>
-        <a href="">CHÍNH SÁCH</a>
-        <a href="">FAQ</a>
-        <a href="">LIÊN HỆ</a>
+        <a routerLink="/services">DỊCH VỤ & SẢN PHẨM</a>
+        <a routerLink="/booking">ĐẶT LỊCH</a>
+        <a routerLink="/forum">DIỄN ĐÀN</a>
+        <a routerLink="/blog">BLOG</a>
+        <a routerLink="/about">GIỚI THIỆU</a>
+        <a routerLink="/policy">CHÍNH SÁCH</a>
+        <a routerLink="/faq">FAQ</a>
+        <a routerLink="/contact">LIÊN HỆ</a>
     </nav>
+    
 </div>
 
