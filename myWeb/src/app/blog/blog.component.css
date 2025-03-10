@@ -1,11 +1,11 @@
 .blog-container {
-    margin: 15% auto 0; /* Căn giữa theo chiều ngang */
+    margin: 15% auto 0;
     display: flex;
-    justify-content: center; /* Căn giữa các phần tử con */
+    justify-content: center;
     gap: 10px;
     font-family: sans-serif;
     width: 80%;
-    max-width: 1200px; /* Giới hạn chiều rộng để không bị quá lớn trên màn hình rộng */
+    max-width: 1200px; 
 }
 .post-list {
     width: 30%;
@@ -34,7 +34,7 @@
     padding: 15px;
     border-radius: 10px;
 }
-  .post-detail-container h2 {
+.post-detail-container h2 {
     margin-top: 0;
 }
   

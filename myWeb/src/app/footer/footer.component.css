@@ -68,6 +68,11 @@ h4 {
 .footer-policy ul li {
     margin-bottom: 5px;
 }
+.footer-policy a {
+    text-decoration: none;
+    color: black;
+    font-size: 10pt;
+}
 .footer-logo {
     width: 50px;
 }

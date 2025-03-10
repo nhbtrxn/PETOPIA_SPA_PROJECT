@@ -7,15 +7,13 @@
     <title>FAQ - PETOPIA SPA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEJXx3p6f5j6rx7f75db3b6c6bfe153813f5a5b3c3f0e3cbe8e8e3be8be8b" crossorigin="anonymous">
-    <link rel="stylesheet" href="faq.component.css"> <!-- Thêm liên kết đến tệp CSS -->
+    <link rel="stylesheet" href="faq.component.css"> 
 </head>
 
 <body>
 
     <div class="container">
-        <!-- Sidebar Menu -->
         <div class="sidebar">
-            <h2>FAQ</h2>
             <ul>
                 <li><a href="#gioi-thieu" onclick="showGroup('gioi-thieu')">Giới Thiệu về PETOPIA SPA</a></li>
                 <li><a href="#lich-hen" onclick="showGroup('lich-hen')">Lịch Hẹn và Dịch Vụ</a></li>
@@ -26,13 +24,11 @@
         </div>
 
         <div class="faq-wrapper">
-            <!-- FAQ Content -->
             <div class="faq-container" id="faqContent">
                 <div class="faq-header">
-                    Câu Hỏi Thường Gặp (FAQ)
+                    <h1>Câu Hỏi Thường Gặp (FAQ)</h1>
                 </div>
 
-                <!-- Giới Thiệu về PETOPIA SPA -->
                 <div id="gioi-thieu" class="faq-group">
                     <h2>Giới Thiệu về PETOPIA SPA</h2>
                     <div class="faq-item">
@@ -64,7 +60,6 @@
                     </div>
                 </div>
 
-                <!-- Lịch Hẹn và Dịch Vụ -->
                 <div id="lich-hen" class="faq-group">
                     <h2>Lịch Hẹn và Dịch Vụ</h2>
                     <div class="faq-item">
@@ -96,7 +91,6 @@
                     </div>
                 </div>
 
-                <!-- Giá Cả và Chính Sách -->
                 <div id="gia_ca" class="faq-group">
                     <h2>Giá Cả và Chính Sách</h2>
                     <div class="faq-item">
@@ -119,7 +113,6 @@
                     </div>
                 </div>
 
-                <!-- Sản Phẩm và Mua Sắm -->
                 <div id="san-pham" class="faq-group">
                     <h2>Sản Phẩm và Mua Sắm</h2>
                     <div class="faq-item">
@@ -134,7 +127,6 @@
                     </div>
                 </div>
 
-                <!-- Liên Hệ và Hỗ Trợ -->
                 <div id="lien-he" class="faq-group">
                     <h2>Liên Hệ và Hỗ Trợ</h2>
                     <div class="faq-item">
@@ -156,47 +148,63 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
     <script>
-        function toggleAnswer(element) {
-            const faqItem = element.closest('.faq-item');
-            const question = faqItem.querySelector('.faq-question');
+        // function toggleAnswer(element) {
+        //     const faqItem = element.closest('.faq-item');
+        //     const question = faqItem.querySelector('.faq-question');
 
-            faqItem.classList.toggle('active');
-            const answer = faqItem.querySelector('.faq-answer');
-            if (answer.style.maxHeight) {
-                answer.style.maxHeight = null;
-                answer.style.opacity = 0;
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-                answer.style.opacity = 1;
-            }            // Thêm hoặc loại bỏ lớp 'active' cho câu hỏi
-            question.classList.toggle('active');
-        }
+        //     faqItem.classList.toggle('active');
+        //     const answer = faqItem.querySelector('.faq-answer');
+        //     if (answer.style.maxHeight) {
+        //         answer.style.maxHeight = null;
+        //         answer.style.opacity = 0;
+        //     } else {
+        //         answer.style.maxHeight = answer.scrollHeight + "px";
+        //         answer.style.opacity = 1;
+        //     }            
+        //     question.classList.toggle('active');
+        // }
+            function toggleAnswer(element) {
+        const faqItem = element.closest('.faq-item');
+        const question = faqItem.querySelector('.faq-question');
+
+        faqItem.classList.toggle('active');
+        const answer = faqItem.querySelector('.faq-answer');
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+            answer.style.opacity = 0;
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            answer.style.opacity = 1;
+        }            
+        question.classList.toggle('active');
+    }
+
 
         function showGroup(groupId) {
             const groups = document.querySelectorAll('.faq-group');
             groups.forEach(group => {
                 if (group.id === groupId) {
-                    group.style.display = "block"; // Hiển thị nhóm được chọn
+                    group.style.display = "block";
                 } else {
-                    group.style.display = "none"; // Ẩn các nhóm khác
+                    group.style.display = "none"; 
                 }
             });
         }
 
-        // Hàm để hiển thị tất cả các nhóm câu hỏi khi trang được tải
         function showAllGroups() {
             const groups = document.querySelectorAll('.faq-group');
             groups.forEach(group => {
-                group.style.display = "block"; // Hiển thị tất cả các nhóm
+                group.style.display = "block"; 
             });
         }
 
-        // Gọi hàm showAllGroups khi trang được tải
         document.addEventListener("DOMContentLoaded", function () {
-            showAllGroups(); // Hiển thị tất cả các nhóm khi tải trang
+            showAllGroups(); 
         });
     </script>
 
 </body>
 
-</html>
+</html> 
+
+
