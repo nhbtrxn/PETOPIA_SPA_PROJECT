@@ -12,9 +12,18 @@ export class PostDetailComponent {
   postContent = '';
 
   posts = [
-    { id: 1, title: 'Cách chăm sóc chó con', content: 'Chi tiết cách chăm sóc chó con...' },
-    { id: 2, title: 'Mẹo huấn luyện mèo đi vệ sinh đúng chỗ', content: 'Hướng dẫn huấn luyện mèo...' },
-    { id: 3, title: 'Thực phẩm tốt nhất cho thú cưng', content: 'Danh sách thực phẩm tốt...' }
+    { id: 1, 
+      title: 'Cách chăm sóc chó con', 
+      content: 'Chi tiết cách chăm sóc chó con cho người mới bắt đầu nuôi' 
+    },
+    { id: 2, 
+      title: 'Mẹo huấn luyện mèo đi vệ sinh đúng chỗ', 
+      content: 'Hướng dẫn huấn luyện mèo...' 
+    },
+    { id: 3, 
+      title: 'Thực phẩm tốt nhất cho thú cưng', 
+      content: 'Danh sách thực phẩm tốt...' 
+    }
   ];
 
   constructor(private route: ActivatedRoute) {}

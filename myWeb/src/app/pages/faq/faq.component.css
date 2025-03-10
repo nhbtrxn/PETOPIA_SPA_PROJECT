@@ -1,157 +1,134 @@
-/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Work Sans', sans-serif;
     background-color: #e3ccbd;
+    margin-top: 12%;
 }
-
-/* Layout */
 .container {
     display: flex;
-    height: auto; /* Chiều cao tự động */
+    height: auto;
 }
-
-/* Sidebar */
 .sidebar {
-    width: 20%; /* Chiếm 20% chiều rộng */
+    width: 20%;
     background-color: #4f2b1a;
     color: white;
     padding: 20px;
-    border-radius: 10px; /* Bo góc */
-    margin: 10px; /* Giảm khoảng cách từ trên và bên trái */
-    height: auto; /* Chiều cao tự động */
+    border-radius: 10px;
+    margin: 10px;
+    height: auto;
 }
-
-.sidebar h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: normal; /* Đổi font-weight thành normal */
-}
-
 .sidebar ul {
     list-style: none;
     padding: 0;
 }
-
 .sidebar ul li {
-    margin: 10px 0; /* Giảm khoảng cách giữa các mục */
+    margin: 10px 0;
 }
-
 .sidebar ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: block;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
 }
-
 .sidebar ul li a:hover {
     background-color: #b68d5f;
     transform: scale(1.05);
 }
-
-/* FAQ Wrapper */
 .faq-wrapper {
-    width: 80%; /* Chiếm 80% chiều rộng */
-    margin: 10px; /* Giảm khoảng cách từ trên và bên phải */
-    padding: 20px; /* Padding cho khung */
-    border: 1px solid #ddd; /* Đường viền cho khung */
-    border-radius: 10px; /* Bo góc cho khung */
-    background-color: #ffffff; /* Nền trắng cho khung */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bóng cho khung */
+    width: 80%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-/* FAQ Container */
 .faq-container {
-    padding: 20px; /* Giảm padding cho nội dung */
+    padding: 20px;
 }
 
-/* FAQ Header */
 .faq-header {
     text-align: center;
-    font-size: 2rem; /* Kích thước chữ */
-    font-weight: normal; /* Đổi font-weight thành normal */
-    margin-bottom: 20px; /* Khoảng cách dưới */
+    font-weight: normal;
+    margin-bottom: 20px;
     color: #4f2b1a;
 }
-
-/* FAQ Group */
+.faq-header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 .faq-group {
-    margin-bottom: 20px; /* Khoảng cách giữa các nhóm */
-    border: 1px solid #ddd; /* Đường viền cho nhóm FAQ */
-    border-radius: 5px; /* Bo góc cho nhóm FAQ */
-    background-color: #ffffff; /* Nền trắng cho nhóm FAQ */
-    overflow: hidden; /* Ẩn nội dung tràn */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
 }
 
 .faq-group h2 {
-    font-size: 1.5rem; /* Kích thước chữ */
-    font-weight: normal; /* Đổi font-weight thành normal */
+    font-size: 1.2rem;
+    font-weight: normal;
     color: #4f2b1a;
     margin-bottom: 0;
-    padding: 10px; /* Padding cho tiêu đề nhóm */
-    background-color: #f2d470; /* Nền vàng cho tiêu đề nhóm */
-    border-bottom: 2px solid #e0994c; /* Đường viền dưới cho tiêu đề nhóm */
+    padding: 10px;
+    background-color: #f2d470;
+    border-bottom: 2px solid #e0994c;
 }
-
-/* FAQ Item */
 .faq-item {
-    border-top: 1px solid #ddd; /* Đường viền trên cho mục FAQ */
-    transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển động */
+    border-top: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
 }
 
 .faq-question {
-    font-size: 1.3rem; /* Kích thước chữ */
-    font-weight: normal; /* Đổi font-weight thành normal */
+    font-size: 1rem;
+    font-weight: normal;
     cursor: pointer;
     color: #4f2b1a;
-    padding: 10px; /* Padding cho câu hỏi */
-    transition: background-color 0.3s ease, transform 0.2s; /* Hiệu ứng chuyển động */
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .faq-question:hover {
     background-color: #4f2b1a; 
-    color: #ffffff;  /* Màu chữ khi hover */
+    color: #ffffff;
 }
 
-/* FAQ Answer */
 .faq-answer {
-    max-height: 0; /* Chiều cao tối đa ban đầu */
-    overflow: hidden; /* Ẩn nội dung tràn */
-    opacity: 0; /* Độ mờ ban đầu */
-    transition: max-height 0.5s ease, opacity 0.5s ease; /* Hiệu ứng chuyển động */
-    font-size: 1rem; /* Kích thước chữ */
-    color: #555; /* Màu chữ cho câu trả lời */
-    line-height: 1.5; /* Khoảng cách dòng */
-    padding: 0 10px; /* Padding cho câu trả lời */
-    background-color: #ffffff; /* Nền trắng cho câu trả lời */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    padding: 0 10px; 
+    background-color: #ffffff;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Chiều cao tối đa khi mở */
-    opacity: 1; /* Độ mờ khi mở */
-    padding: 10px; /* Padding cho câu trả lời khi mở */
+    max-height: 200px;
+    opacity: 1;
+    padding: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .sidebar {
-        width: 200px; /* Chiều rộng sidebar trên màn hình nhỏ */
+        width: 200px;
     }
 
     .faq-wrapper {
-        width: calc(100% - 220px); /* Chiều rộng khung trên màn hình nhỏ */
+        width: calc(100% - 220px);
     }
 
     .faq-container {
-        margin-left: 220px; /* Khoảng cách với sidebar trên màn hình nhỏ */
+        margin-left: 220px;
     }
 }
+

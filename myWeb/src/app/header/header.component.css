@@ -132,6 +132,14 @@
     font-weight: bold;
     font-size: 1em;
 }
+.nav-bar a:hover {
+    background-color: #4f2b1a !important;
+    color: white !important;
+}
+.nav-bar a::after {
+    background-color: #4f2b1a !important;
+    color: white !important;
+}
 @media screen and (max-width: 1024px) {
     .main-header {
         display: flex;

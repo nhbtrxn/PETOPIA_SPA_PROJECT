@@ -5,161 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chính sách và điều khoản</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Work Sans', sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(to right, #e3ccbd, #f2d470);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .toggle-container {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            z-index: 1000;
-        }
-        .toggle-label {
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        .toggle-switch {
-            position: relative;
-            width: 50px;
-            height: 26px;
-        }
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #e0994c;
-            border-radius: 50px;
-            transition: 0.4s;
-        }
-        .slider:before {
-            content: "";
-            position: absolute;
-            height: 20px;
-            width: 20px;
-            left: 3px;
-            bottom: 3px;
-            background-color: rgb(255, 255, 255);
-            border-radius: 50%;
-            transition: 0.4s;
-        }
-        input:checked + .slider {
-            background-color: #4f2b1a;
-        }
-        input:checked + .slider:before {
-            transform: translateX(24px);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            padding: 30px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 60px;
-            text-align: left;
-        }
-        h2 {
-            font-size: 30px;
-            color: #4f2b1a;
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .accordion {
-            background: #b68d5f;
-            border: none;
-            padding: 18px;
-            width: 100%;
-            text-align: left;
-            cursor: pointer;
-            font-size: 20px;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.2s;
-            border-radius: 8px;
-            margin-top: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: rgb(255, 255, 255);
-        }
-        .accordion:hover {
-            background: #e0994c;
-            transform: scale(1.02);
-        }
-        .accordion.active {
-            background: #f2d470;
-            color: #4f2b1a;
-        }
-        .panel {
-            background: #fff8ee;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            padding: 0 20px;
-        }
-        .panel p {
-            padding: 15px 0;
-        }
-        .dark-mode {
-            background: #222;
-            color: white;
-        }
-
-        .dark-mode .container {
-            background: #333;
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-        }
-
-        .dark-mode h2 {
-            color: white;
-        }
-
-        .dark-mode .accordion {
-            background: #555;
-            color: white;
-        }
-
-        .dark-mode .accordion.active {
-            background: #e0994c;
-            color: white;
-        }
-
-        .dark-mode .panel {
-            background: #444;
-            color: white;
-        }
-    </style>
 </head>
 <body>
     <div class="toggle-container">
@@ -169,24 +14,20 @@
             <span class="slider"></span>
         </label>
     </div>
-
     <div class="container">
         <h2><i class="fas fa-scroll"></i> Chính sách và Điều khoản</h2>
-        
         <button class="accordion">
             <i class="fas fa-shield-alt"></i> Chính sách bảo mật
         </button>
         <div class="panel">
             <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và đảm bảo quyền riêng tư tối đa.</p>
         </div>
-        
         <button class="accordion">
             <i class="fas fa-sync-alt"></i> Chính sách đổi trả
         </button>
         <div class="panel">
             <p>Bạn có thể đổi trả sản phẩm trong vòng 7 ngày nếu có lỗi từ nhà sản xuất.</p>
         </div>
-        
         <button class="accordion">
             <i class="fas fa-file-contract"></i> Điều khoản sử dụng
         </button>
@@ -230,3 +71,36 @@
     </script>
 </body>
 </html>
+
+<!-- <div class="toggle-container">
+    <span class="toggle-label" (click)="toggleDarkMode()">{{ isDarkMode ? '🌙' : '🌞' }}</span>
+    <label class="toggle-switch">
+        <input type="checkbox" [checked]="isDarkMode" (change)="toggleDarkMode()">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<div class="container">
+    <h2><i class="fas fa-scroll"></i> Chính sách và Điều khoản</h2>
+
+    <button class="accordion" (click)="togglePanel(0)">
+        <i class="fas fa-shield-alt"></i> Chính sách bảo mật
+    </button>
+    <div class="panel" [style.max-height]="activePanel === 0 ? '200px' : '0px'">
+        <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và đảm bảo quyền riêng tư tối đa.</p>
+    </div>
+
+    <button class="accordion" (click)="togglePanel(1)">
+        <i class="fas fa-sync-alt"></i> Chính sách đổi trả
+    </button>
+    <div class="panel" [style.max-height]="activePanel === 0 ? '200px' : '0px'">
+        <p>Bạn có thể đổi trả sản phẩm trong vòng 7 ngày nếu có lỗi từ nhà sản xuất.</p>
+    </div>
+
+    <button class="accordion" (click)="togglePanel(2)">
+        <i class="fas fa-file-contract"></i> Điều khoản sử dụng
+    </button>
+    <div class="panel" [style.max-height]="activePanel === 0 ? '200px' : '0px'">
+        <p>Việc sử dụng dịch vụ của chúng tôi đồng nghĩa với việc bạn chấp nhận các điều khoản dưới đây...</p>
+    </div>
+</div> -->
