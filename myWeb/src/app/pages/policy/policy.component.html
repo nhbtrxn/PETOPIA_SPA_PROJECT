@@ -1,106 +1,51 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chính sách và điều khoản</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="toggle-container">
-        <span class="toggle-label" id="toggleIcon">🌞</span>
-        <label class="toggle-switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider"></span>
-        </label>
-    </div>
-    <div class="container">
-        <h2><i class="fas fa-scroll"></i> Chính sách và Điều khoản</h2>
-        <button class="accordion">
-            <i class="fas fa-shield-alt"></i> Chính sách bảo mật
-        </button>
-        <div class="panel">
-            <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và đảm bảo quyền riêng tư tối đa.</p>
-        </div>
-        <button class="accordion">
-            <i class="fas fa-sync-alt"></i> Chính sách đổi trả
-        </button>
-        <div class="panel">
-            <p>Bạn có thể đổi trả sản phẩm trong vòng 7 ngày nếu có lỗi từ nhà sản xuất.</p>
-        </div>
-        <button class="accordion">
-            <i class="fas fa-file-contract"></i> Điều khoản sử dụng
-        </button>
-        <div class="panel">
-            <p>Việc sử dụng dịch vụ của chúng tôi đồng nghĩa với việc bạn chấp nhận các điều khoản dưới đây...</p>
-        </div>
-    </div>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const accordions = document.querySelectorAll(".accordion");
-            const darkModeToggle = document.getElementById("darkModeToggle");
-            const toggleIcon = document.getElementById("toggleIcon");
-
-            // Kiểm tra trạng thái dark mode từ localStorage
-            if (localStorage.getItem("darkMode") === "enabled") {
-                document.body.classList.add("dark-mode");
-                darkModeToggle.checked = true;
-                toggleIcon.textContent = "🌙";
-            }
-
-            darkModeToggle.addEventListener("change", () => {
-                document.body.classList.toggle("dark-mode");
-                if (document.body.classList.contains("dark-mode")) {
-                    localStorage.setItem("darkMode", "enabled");
-                    toggleIcon.textContent = "🌙";
-                } else {
-                    localStorage.setItem("darkMode", "disabled");
-                    toggleIcon.textContent = "🌞";
-                }
-            });
-
-            accordions.forEach(acc => {
-                acc.addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    const panel = this.nextElementSibling;
-                    panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-                });
-            });
-        });
-    </script>
-</body>
-</html>
-
-<!-- <div class="toggle-container">
-    <span class="toggle-label" (click)="toggleDarkMode()">{{ isDarkMode ? '🌙' : '🌞' }}</span>
-    <label class="toggle-switch">
-        <input type="checkbox" [checked]="isDarkMode" (change)="toggleDarkMode()">
-        <span class="slider"></span>
-    </label>
-</div>
-
-<div class="container">
-    <h2><i class="fas fa-scroll"></i> Chính sách và Điều khoản</h2>
-
-    <button class="accordion" (click)="togglePanel(0)">
-        <i class="fas fa-shield-alt"></i> Chính sách bảo mật
-    </button>
-    <div class="panel" [style.max-height]="activePanel === 0 ? '200px' : '0px'">
-        <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và đảm bảo quyền riêng tư tối đa.</p>
-    </div>
-
-    <button class="accordion" (click)="togglePanel(1)">
-        <i class="fas fa-sync-alt"></i> Chính sách đổi trả
-    </button>
-    <div class="panel" [style.max-height]="activePanel === 0 ? '200px' : '0px'">
-        <p>Bạn có thể đổi trả sản phẩm trong vòng 7 ngày nếu có lỗi từ nhà sản xuất.</p>
-    </div>
-
-    <button class="accordion" (click)="togglePanel(2)">
-        <i class="fas fa-file-contract"></i> Điều khoản sử dụng
-    </button>
-    <div class="panel" [style.max-height]="activePanel === 0 ? '200px' : '0px'">
-        <p>Việc sử dụng dịch vụ của chúng tôi đồng nghĩa với việc bạn chấp nhận các điều khoản dưới đây...</p>
-    </div>
-</div> -->
+ <!DOCTYPE html>
+ <html lang="vi">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Chính Sách - PETOPIA SPA</title>
+     <link rel="stylesheet" href="policy.component.css">
+ </head>
+ <body>
+     <div class="container">
+         <div class="sidebar">
+             <ul>
+                 <li><a href="#privacy" (click)="showGroup($event, 'privacy')">Chính sách bảo mật</a></li>
+                 <li><a href="#return" (click)="showGroup($event, 'return')">Chính sách đổi trả</a></li>
+                 <li><a href="#terms" (click)="showGroup($event, 'terms')">Điều khoản sử dụng</a></li>
+             </ul>
+         </div>
+ 
+         <div class="faq-wrapper">
+             <h2><i class="fas fa-scroll"></i> Chính sách và Điều khoản</h2>
+ 
+             <div id="privacy">
+                 <button class="accordion" (click)="toggleSection('privacy')">
+                     <i class="fas fa-shield-alt"></i> Chính sách bảo mật
+                 </button>
+                 <div class="panel" [ngClass]="{ 'active': activeSection === 'privacy' }" [style.maxHeight]="activeSection === 'privacy' ? panelHeight : '0'">
+                     <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và đảm bảo quyền riêng tư tối đa.</p>
+                 </div>
+             </div>
+ 
+             <div id="return">
+                 <button class="accordion" (click)="toggleSection('return')">
+                     <i class="fas fa-sync-alt"></i> Chính sách đổi trả
+                 </button>
+                 <div class="panel" [ngClass]="{ 'active': activeSection === 'return' }" [style.maxHeight]="activeSection === 'return' ? panelHeight : '0'">
+                     <p>Bạn có thể đổi trả sản phẩm trong vòng 7 ngày nếu có lỗi từ nhà sản xuất.</p>
+                 </div>
+             </div>
+ 
+             <div id="terms">
+                 <button class="accordion" (click)="toggleSection('terms')">
+                     <i class="fas fa-file-contract"></i> Điều khoản sử dụng
+                 </button>
+                 <div class="panel" [ngClass]="{ 'active': activeSection === 'terms' }" [style.maxHeight]="activeSection === 'terms' ? panelHeight : '0'">
+                     <p>Việc sử dụng dịch vụ của chúng tôi đồng nghĩa với việc bạn chấp nhận các điều khoản dưới đây...</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </body>
+ </html>
