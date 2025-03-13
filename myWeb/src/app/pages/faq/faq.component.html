@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - PETOPIA SPA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEJXx3p6f5j6rx7f75db3b6c6bfe153813f5a5b3c3f0e3cbe8e8e3be8be8b" crossorigin="anonymous">
-    <link rel="stylesheet" href="faq.component.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="faq.component.css">
 </head>
 
 <body>
@@ -15,11 +14,11 @@
     <div class="container">
         <div class="sidebar">
             <ul>
-                <li><a href="#gioi-thieu" onclick="showGroup('gioi-thieu')">Giới Thiệu về PETOPIA SPA</a></li>
-                <li><a href="#lich-hen" onclick="showGroup('lich-hen')">Lịch Hẹn và Dịch Vụ</a></li>
-                <li><a href="#gia_ca" onclick="showGroup('gia_ca')">Giá Cả và Chính Sách</a></li>
-                <li><a href="#san-pham" onclick="showGroup('san-pham')">Sản Phẩm và Mua Sắm</a></li>
-                <li><a href="#lien-he" onclick="showGroup('lien-he')">Liên Hệ và Hỗ Trợ</a></li>
+                <li><a href="#gioi-thieu" (click)="showGroup($event, 'gioi-thieu')">Giới Thiệu về PETOPIA SPA</a></li>
+                <li><a href="#lich-hen" (click)="showGroup($event, 'lich-hen')">Lịch Hẹn và Dịch Vụ</a></li>
+                <li><a href="#gia_ca" (click)="showGroup($event, 'gia_ca')">Giá Cả và Chính Sách</a></li>
+                <li><a href="#san-pham" (click)="showGroup($event, 'san-pham')">Sản Phẩm và Mua Sắm</a></li>
+                <li><a href="#lien-he" (click)="showGroup($event, 'lien-he')">Liên Hệ và Hỗ Trợ</a></li>
             </ul>
         </div>
 
@@ -29,33 +28,15 @@
                     <h1>Câu Hỏi Thường Gặp (FAQ)</h1>
                 </div>
 
+                <!-- Nhóm FAQ -->
                 <div id="gioi-thieu" class="faq-group">
                     <h2>Giới Thiệu về PETOPIA SPA</h2>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
                             PETOPIA SPA là gì?
                         </div>
                         <div class="faq-answer">
-                            PETOPIA SPA là một spa chuyên chăm sóc thú cưng, cung cấp các dịch vụ tắm rửa, cắt tỉa, chăm
-                            sóc sức khỏe và làm đẹp cho các loài thú cưng như chó, mèo và các vật nuôi nhỏ khác.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            Những dịch vụ nào có tại PETOPIA SPA?
-                        </div>
-                        <div class="faq-answer">
-                            Chúng tôi cung cấp các dịch vụ như tắm, cắt tỉa lông, cắt móng, chăm sóc da, làm đẹp cho thú
-                            cưng, và các dịch vụ chăm sóc sức khỏe khác.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            PETOPIA SPA có chăm sóc tất cả các loại thú cưng không?
-                        </div>
-                        <div class="faq-answer">
-                            Chúng tôi chăm sóc các loài thú cưng như chó, mèo, và các vật nuôi nhỏ khác. Nếu bạn có yêu
-                            cầu đặc biệt về loại thú cưng, vui lòng liên hệ với chúng tôi trước.
+                            PETOPIA SPA là một spa chuyên chăm sóc thú cưng...
                         </div>
                     </div>
                 </div>
@@ -63,30 +44,11 @@
                 <div id="lich-hen" class="faq-group">
                     <h2>Lịch Hẹn và Dịch Vụ</h2>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
                             Tôi cần đặt lịch trước hay có thể đến trực tiếp?
                         </div>
                         <div class="faq-answer">
-                            Chúng tôi khuyến khích khách hàng đặt lịch trước để đảm bảo có chỗ và tránh phải chờ lâu.
-                            Tuy nhiên, nếu bạn muốn đến trực tiếp, chúng tôi vẫn sẽ hỗ trợ tùy vào tình trạng hiện tại.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            Có yêu cầu gì về sức khỏe cho thú cưng khi sử dụng dịch vụ không?
-                        </div>
-                        <div class="faq-answer">
-                            Để đảm bảo sức khỏe cho thú cưng và sự an toàn trong quá trình chăm sóc, chúng tôi yêu cầu
-                            các thú cưng phải có giấy chứng nhận sức khỏe đầy đủ và không có dấu hiệu bệnh truyền nhiễm.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            Tôi có thể thay đổi lịch hẹn không?
-                        </div>
-                        <div class="faq-answer">
-                            Có, bạn có thể thay đổi lịch hẹn bằng cách liên hệ với chúng tôi ít nhất 24 giờ trước thời
-                            gian đã đặt.
+                            Chúng tôi khuyến khích khách hàng đặt lịch trước...
                         </div>
                     </div>
                 </div>
@@ -94,21 +56,11 @@
                 <div id="gia_ca" class="faq-group">
                     <h2>Giá Cả và Chính Sách</h2>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
                             Giá cả dịch vụ tại PETOPIA SPA như thế nào?
                         </div>
                         <div class="faq-answer">
-                            Giá cả dịch vụ tại PETOPIA SPA phụ thuộc vào loại dịch vụ và kích thước của thú cưng. Bạn có
-                            thể tham khảo bảng giá trên website hoặc liên hệ trực tiếp để nhận báo giá chi tiết.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            PETOPIA SPA có chính sách bảo hành cho dịch vụ không?
-                        </div>
-                        <div class="faq-answer">
-                            Chúng tôi cam kết cung cấp dịch vụ chất lượng và bảo hành cho các dịch vụ làm đẹp thú cưng
-                            trong vòng 7 ngày nếu có vấn đề phát sinh.
+                            Giá cả dịch vụ tại PETOPIA SPA phụ thuộc vào loại dịch vụ...
                         </div>
                     </div>
                 </div>
@@ -116,13 +68,11 @@
                 <div id="san-pham" class="faq-group">
                     <h2>Sản Phẩm và Mua Sắm</h2>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
                             PETOPIA SPA có cung cấp sản phẩm cho thú cưng không?
                         </div>
                         <div class="faq-answer">
-                            Có, chúng tôi cung cấp các sản phẩm chăm sóc sức khỏe, thức ăn, đồ chơi và phụ kiện cho thú
-                            cưng. Bạn có thể tham khảo và mua các sản phẩm này ngay tại spa hoặc đặt online trên
-                            website.
+                            Có, chúng tôi cung cấp các sản phẩm chăm sóc thú cưng...
                         </div>
                     </div>
                 </div>
@@ -130,12 +80,11 @@
                 <div id="lien-he" class="faq-group">
                     <h2>Liên Hệ và Hỗ Trợ</h2>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
                             Làm thế nào để liên hệ với PETOPIA SPA?
                         </div>
                         <div class="faq-answer">
-                            Bạn có thể liên hệ với chúng tôi qua số điện thoại, email hoặc trực tiếp đến địa chỉ của
-                            PETOPIA SPA. Thông tin chi tiết có trên trang Liên hệ của website.
+                            Bạn có thể liên hệ với chúng tôi qua số điện thoại, email...
                         </div>
                     </div>
                 </div>
@@ -144,67 +93,9 @@
         </div>
     </div>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-    <script>
-        // function toggleAnswer(element) {
-        //     const faqItem = element.closest('.faq-item');
-        //     const question = faqItem.querySelector('.faq-question');
-
-        //     faqItem.classList.toggle('active');
-        //     const answer = faqItem.querySelector('.faq-answer');
-        //     if (answer.style.maxHeight) {
-        //         answer.style.maxHeight = null;
-        //         answer.style.opacity = 0;
-        //     } else {
-        //         answer.style.maxHeight = answer.scrollHeight + "px";
-        //         answer.style.opacity = 1;
-        //     }            
-        //     question.classList.toggle('active');
-        // }
-            function toggleAnswer(element) {
-        const faqItem = element.closest('.faq-item');
-        const question = faqItem.querySelector('.faq-question');
-
-        faqItem.classList.toggle('active');
-        const answer = faqItem.querySelector('.faq-answer');
-        if (answer.style.maxHeight) {
-            answer.style.maxHeight = null;
-            answer.style.opacity = 0;
-        } else {
-            answer.style.maxHeight = answer.scrollHeight + "px";
-            answer.style.opacity = 1;
-        }            
-        question.classList.toggle('active');
-    }
-
-
-        function showGroup(groupId) {
-            const groups = document.querySelectorAll('.faq-group');
-            groups.forEach(group => {
-                if (group.id === groupId) {
-                    group.style.display = "block";
-                } else {
-                    group.style.display = "none"; 
-                }
-            });
-        }
-
-        function showAllGroups() {
-            const groups = document.querySelectorAll('.faq-group');
-            groups.forEach(group => {
-                group.style.display = "block"; 
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            showAllGroups(); 
-        });
-    </script>
-
 </body>
 
-</html> 
-
-
+</html>
