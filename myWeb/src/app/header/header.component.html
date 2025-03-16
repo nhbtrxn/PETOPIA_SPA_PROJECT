@@ -37,15 +37,51 @@
     </header>
     <button class="menu-btn" (click)="toggleMenu()">☰</button>
     <nav class="nav-bar" [class.show]="isMenuOpen">
-        <a routerLink="/services">DỊCH VỤ & SẢN PHẨM</a>
-        <a routerLink="/booking">ĐẶT LỊCH</a>
-        <a routerLink="/forum">DIỄN ĐÀN</a>
-        <a routerLink="/blog">KINH NGHIỆM HAY</a>
-        <a routerLink="/about">GIỚI THIỆU</a>
-        <a routerLink="/policy">CHÍNH SÁCH</a>
-        <a routerLink="/faq">FAQ</a>
-        <a routerLink="/contact">LIÊN HỆ</a>
+        <a routerLink="/product-service" (click)="showServiceBar()">DỊCH VỤ & SẢN PHẨM</a>
+        <a routerLink="/booking" (click)="showBar()">ĐẶT LỊCH</a>
+        <a routerLink="/forum" (click)="showBar()">DIỄN ĐÀN</a>
+        <a routerLink="/blog" (click)="showBar()">KINH NGHIỆM HAY</a>
+        <a routerLink="/about" (click)="showBar()">GIỚI THIỆU</a>
+        <a routerLink="/policy" (click)="showBar()">CHÍNH SÁCH</a>
+        <a routerLink="/faq" (click)="showBar()">FAQ</a>
+        <a routerLink="/contact" (click)="showBar()">LIÊN HỆ</a>
     </nav>
-    
+    <div [ngSwitch]="displaybar">
+        <div *ngSwitchCase="'service-bar'" class="product-service-bar">
+            <nav>
+                <a href="#hotel-service">Dịch khách sạn thú cưng</a>
+                <a href="#spa-service">Dịch vụ spa</a>
+                <a href="#health-service">Dịch vụ chăm sóc sức khỏe</a>
+                <a href="#other-service">Dịch vụ khác</a>
+            </nav>
+        </div>
+        <div *ngSwitchCase="'product-bar'" class="product-service-bar">
+            <nav>
+                <a href="#dog-product">Sản phẩm cho chó</a>
+                <a href="#cat-product">Sản phẩm cho mèo</a>
+            </nav>
+        </div>
+        <div *ngSwitchCase="'dog-product-bar'" class="product-service-bar">
+            <nav>
+                <a href="#dog-food">Thức ăn cho chó</a>
+                <a href="#dog-drug">Thuốc cho chó</a>
+                <a href="#dog-clean">Dụng cụ vệ sinh cho chó</a>
+                <a href="#dog-accessories">Phụ kiện cho chó</a>
+                <a href="#dog-clothes">Quần áo cho chó</a>
+                <a href="#dog-goods">Đồ dùng cho chó</a>
+            </nav>
+        </div>
+        <div *ngSwitchCase="'cat-product-bar'" class="product-service-bar">
+            <nav>
+                <a href="#cat-food">Thức ăn cho mèo</a>
+                <a href="#cat-drug">Thuốc cho mèo</a>
+                <a href="#cat-clean">Dụng cụ vệ sinh cho mèo</a>
+                <a href="#cat-accessories">Phụ kiện cho mèo</a>
+                <a href="#cat-clothes">Quần áo cho mèo</a>
+                <a href="#cat-goods">Đồ dùng cho mèo</a>
+            </nav>
+        </div>
+        <div *ngSwitchDefault></div>
+    </div>
 </div>
 

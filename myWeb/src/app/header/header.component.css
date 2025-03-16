@@ -140,6 +140,33 @@
     background-color: #4f2b1a !important;
     color: white !important;
 }
+
+
+/* Service and product bar */
+.product-service-bar a{
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: #b68d5f;
+    padding-left: 2.5vw;
+}
+
+.product-service-bar{
+    font-family: "EB Garamond";
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: 2px solid #b68d5f;
+    border-bottom: 2px solid #b68d5f;
+    background-color: white;
+    z-index: -1;
+}
+
+
 @media screen and (max-width: 1024px) {
     .main-header {
         display: flex;
@@ -172,6 +199,8 @@
         z-index: 1000;
     }
 }
+
+
 @media screen and (max-width: 800px) {
     .main-header {
         display: flex;

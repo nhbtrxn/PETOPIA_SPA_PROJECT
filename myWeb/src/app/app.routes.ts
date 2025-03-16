@@ -8,6 +8,8 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { PolicyComponent } from './pages/policy/policy.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BlogComponent } from './blog/blog.component';
+import { ProductServiceComponent } from './product-service-pages/product-service/product-service.component';
+import { ProductComponent } from './product-service-pages/product/product.component';
 
 export const AppRoutes: Routes = [
   { 
@@ -24,6 +26,8 @@ export const AppRoutes: Routes = [
   { path: 'faq', component: FaqComponent },
   { path: 'policy', component: PolicyComponent },
   { path: 'homepage', component: HomepageComponent },
+  { path: 'product-service', component: ProductServiceComponent},
+  { path: 'product', component: ProductComponent},
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }, // Trang mặc định
   { path: '**', redirectTo: '/homepage' } // Xử lý trang không tồn tại
 ];
