@@ -1,0 +1,28 @@
+<div class="product-service">
+    <div class="product-service-category">
+        <nav>
+            <a (click)="toggleCategory('service-category', $event); sendValue('service-bar')" 
+            [ngClass]="choosenCategory === 'service-category' ? 'border-highlight' : ''">DỊCH VỤ</a>
+            <a (click)="toggleCategory('product-category', $event); sendValue('product-bar')"  [ngClass]="choosenCategory === 'product-category' ? 'border-highlight' : ''">SẢN PHẨM</a>
+        </nav>
+    </div>
+    <div *ngIf="choosenCategory==='service-category'">
+    </div>
+    <div id="product-list" *ngIf="choosenCategory==='product-category'">
+        <p>
+            <i class="bi bi-chevron-compact-right" 
+               [ngClass]="rotatedIcons['dog-product-bar'] ? 'rotate' : ''"></i>
+            <a (click)="sendValue('dog-product-bar'); toggleIcon('dog-product-bar')">
+              SẢN PHẨM CHO CHÓ
+            </a>
+          </p>
+          <hr>
+          <p>
+            <i class="bi bi-chevron-compact-right"
+               [ngClass]="rotatedIcons['cat-product-bar'] ? 'rotate' : ''"></i>
+            <a (click)="sendValue('cat-product-bar'); toggleIcon('cat-product-bar')">
+              SẢN PHẨM CHO MÈO
+            </a>
+          </p>
+    </div>
+</div>
