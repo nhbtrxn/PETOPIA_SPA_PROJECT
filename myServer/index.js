@@ -227,14 +227,6 @@ app.get("/", (req, res) => {
     res.send("API đang chạy! Sử dụng /sync/{ten_sheet} để đồng bộ từng sheet.");
 });
 
-// Khởi động server
-app.listen(PORT, () => console.log(`Server đang chạy tại http://localhost:${PORT}`));
-
-
-// Kiểm tra server
-app.get("/", (req, res) => {
-    res.send("API đang chạy! Sử dụng /sync/{ten_sheet} để đồng bộ từng sheet.");
-});
 
 // Khởi động server
 app.listen(PORT, () => console.log(`Server đang chạy tại http://localhost:${PORT}`));
