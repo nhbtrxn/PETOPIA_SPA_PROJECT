@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h4>{{ title }}</h4>
+  <div *ngIf="errorMessage" class="alert alert-warning text-center">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!errorMessage" class="d-flex align-items-center">
+    <button class="btn btn-outline-secondary me-2" (click)="prevFunction()" 
+      [disabled]="!services || services.length === 0 || currentIndex === 0">
+      <<
+    </button>
+    <div class="row flex-nowrap overflow-hidden">
+      <div class="col-md-3" *ngFor="let service of services">
+        <div class="card position-relative" [routerLink]="['/service', service.service_id]">
+          <img *ngIf="service.image && service.image.length > 0" [src]="service.image[0] + '.jpg'" 
+            class="card-img-top" alt="Dịch vụ" />
+          <button class="btn btn-primary btn-booking">Đặt lịch</button>
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ service.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-outline-secondary ms-2" (click)="nextFunction()" >
+      >>
+    </button>
+  </div>
+  <div class="text-center mt-4">
+    <button type="button" class="btn btn-outline-secondary">Xem thêm</button>
+  </div>
+</div>

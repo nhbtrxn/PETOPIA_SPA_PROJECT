@@ -6,7 +6,7 @@ const serviceSchema = new mongoose.Schema({
     category: { type: String, required: true },
     name: { type: String, required: true },
     detail: { type: String, required: false },
-    image: [{ type: String }] 
+    image: [{ type: String }],
 });
 
 module.exports = mongoose.model("Service", serviceSchema);

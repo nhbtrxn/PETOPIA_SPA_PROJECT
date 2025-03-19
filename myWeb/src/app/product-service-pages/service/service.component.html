@@ -1,0 +1,31 @@
+<div class="service">
+  <app-service-list 
+    title="DỊCH VỤ BÁN CHẠY, GIẢM GIÁ"
+    [services]="displayedAllServices"
+    [errorMessage]="''"
+    [currentIndex]="currentIndexAll"
+    [itemsPerPage]="itemsPerPage"
+    [prevFunction]="prevAll"
+    [nextFunction]="nextAll">
+  </app-service-list>
+
+  <app-service-list 
+    title="DỊCH VỤ KHÁCH SẠN, THÚ CƯNG"
+    [services]="displayedFilteredHotel"
+    [errorMessage]="errorMessage"
+    [currentIndex]="currentIndexHotel"
+    [itemsPerPage]="itemsPerPage"
+    [prevFunction]="prevHotel"
+    [nextFunction]="nextHotel">
+  </app-service-list>
+
+  <app-service-list 
+    title="DỊCH VỤ SPA, THÚ CƯNG"
+    [services]="displayedFilteredSpa"
+    [errorMessage]="errorMessageSpa"
+    [currentIndex]="currentIndexSpa"
+    [itemsPerPage]="itemsPerPage"
+    [prevFunction]="prevSpa"
+    [nextFunction]="nextSpa">
+  </app-service-list>
+</div>

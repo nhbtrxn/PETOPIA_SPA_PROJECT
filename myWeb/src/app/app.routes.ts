@@ -10,7 +10,9 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProductServiceComponent } from './product-service-pages/product-service/product-service.component';
 import { ProductComponent } from './product-service-pages/product/product.component';
-
+import { ServiceComponent } from './product-service-pages/service/service.component';
+import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 export const AppRoutes: Routes = [
   { 
     path: 'blog', 
@@ -28,6 +30,9 @@ export const AppRoutes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'product-service', component: ProductServiceComponent},
   { path: 'product', component: ProductComponent},
+  { path: 'services', component: ServiceComponent }, 
+  { path: 'service/:service_id', component: ServiceDetailComponent },
+  { path: 'product/:product_id', component: ProductDetailComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }, // Trang mặc định
-  { path: '**', redirectTo: '/homepage' } // Xử lý trang không tồn tại
+  { path: '**', redirectTo: '/homepage' }, // Xử lý trang không tồn tại
 ];

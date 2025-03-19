@@ -1,0 +1,18 @@
+<div class="product">
+    <app-dog-product-list 
+      title="TẤT CẢ SẢN PHẨM"
+      [products]="displayedAllProducts"
+      [errorMessage]="errorMessage"
+      [currentIndex]="currentIndexAll"
+      [itemsPerPage]="itemsPerPage"
+      [prevFunction]="prevAll"
+      [nextFunction]="nextAll">
+    </app-dog-product-list>
+  
+    <app-dog-product-list title="THỨC ĂN CHO CHÓ" [products]="displayedFilteredFood" [prevFunction]="prevFood" [nextFunction]="nextFood"></app-dog-product-list>
+    <app-dog-product-list title="THUỐC CHO CHÓ" [products]="displayedFilteredMedicine" [prevFunction]="prevMedicine" [nextFunction]="nextMedicine"></app-dog-product-list>
+    <app-dog-product-list title="DỤNG CỤ VỆ SINH CHO CHÓ" [products]="displayedFilteredHygiene" [prevFunction]="prevHygiene" [nextFunction]="nextHygiene"></app-dog-product-list>
+    <app-dog-product-list title="PHỤ KIỆN CHO CHÓ" [products]="displayedFilteredAccessories" [prevFunction]="prevAccessories" [nextFunction]="nextAccessories"></app-dog-product-list>
+    <app-dog-product-list title="QUẦN ÁO CHO CHÓ" [products]="displayedFilteredClothing" [prevFunction]="prevClothing" [nextFunction]="nextClothing"></app-dog-product-list>
+    <app-dog-product-list title="ĐỒ DÙNG CHO CHÓ" [products]="displayedFilteredSupplies" [prevFunction]="prevSupplies" [nextFunction]="nextSupplies"></app-dog-product-list>
+  </div>
