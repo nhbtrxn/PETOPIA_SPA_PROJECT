@@ -13,6 +13,10 @@ import { ProductComponent } from './product-service-pages/product/product.compon
 import { ServiceComponent } from './product-service-pages/service/service.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './account/register/register.component';
+import { Register1Component } from './account/register-1/register-1.component';
+import { RegisteredSuccessfullyComponent } from './annoucement/registered-successfully/registered-successfully.component';
 export const AppRoutes: Routes = [
   { 
     path: 'blog', 
@@ -33,6 +37,10 @@ export const AppRoutes: Routes = [
   { path: 'services', component: ServiceComponent }, 
   { path: 'service/:service_id', component: ServiceDetailComponent },
   { path: 'product/:product_id', component: ProductDetailComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'register-1', component: Register1Component},
+  { path: 'registered-successfully', component: RegisteredSuccessfullyComponent},
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }, // Trang mặc định
   { path: '**', redirectTo: '/homepage' }, // Xử lý trang không tồn tại
 ];

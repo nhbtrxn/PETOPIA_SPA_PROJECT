@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const fs = require("fs");
 const cors = require("cors");
+const User = require("./models/User");
+const multer = require("multer");
+const axios = require("axios");
 
 // Cấu hình môi trường
 dotenv.config();
@@ -12,6 +15,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
+app.use(express.json({ limit: '100mb' }))
+app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
 // Kết nối MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -222,5 +227,111 @@ app.get("/", (req, res) => {
     res.send("API đang chạy! Sử dụng /sync/{ten_sheet} để đồng bộ từng sheet.");
 });
 
+
 // Khởi động server
 app.listen(PORT, () => console.log(`Server đang chạy tại http://localhost:${PORT}`));
+
+mongoose.connect("mongodb://localhost:27017/petopia_spa", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+app.post("/register", async (req, res) => {
+    const { username, password, dob, phone, email, avatar } = req.body;
+    try {
+        const newUser = new User({ username, password, dob, phone, email, avatar });
+        await newUser.save();
+        res.status(201).json({ message: "User registered successfully!" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// API lấy danh sách user
+app.get("/users", async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.post("/check-account", async (req, res) => {
+    console.log("Kiểm tra tài khoản:", req.body);
+  
+    try {
+      const { phone, email } = req.body;
+  
+      // Tìm user theo số điện thoại hoặc email
+      const existingUser = await User.findOne({ $or: [{ phone }, { email }] });
+  
+      if (existingUser) {
+        return res.json({ exists: true });
+      }
+  
+      res.json({ exists: false });
+    } catch (error) {
+      console.error("Lỗi kiểm tra tài khoản:", error);
+      res.status(500).json({ error: "Lỗi server" });
+    }
+  });
+
+
+
+// API Đăng nhập
+app.post("/login", async (req, res) => {
+    console.log("Nhận yêu cầu đăng nhập:", req.body);
+
+    try {
+        const { emailOrPhone, password } = req.body;
+
+        // Kiểm tra xem user có tồn tại không
+        const user = await User.findOne({ 
+            $or: [{ phone: emailOrPhone }, { email: emailOrPhone }]
+        });
+
+        if (!user) {
+            return res.status(400).json({ success: false, message: "Tài khoản không tồn tại!" });
+        }
+
+        // Kiểm tra mật khẩu
+        if (user.password !== password) {
+            return res.status(400).json({ success: false, message: "Sai mật khẩu!" });
+        }
+
+        res.json({ success: true, message: "Đăng nhập thành công!", user });
+    } catch (error) {
+        console.error("Lỗi khi đăng nhập:", error);
+        res.status(500).json({ success: false, message: "Lỗi server!" });
+    }
+});
+
+
+
+//Cấu hình multer để lưu file tạm thời trước khi upload lên Imgur
+const upload = multer({ dest: "uploads/" });
+
+app.post("/upload", upload.single("avatar"), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: "Không có file nào được chọn!" });
+    }
+
+    const image = fs.readFileSync(req.file.path, { encoding: "base64" }); //Chuyển ảnh sang base64
+
+    const response = await axios.post("https://api.imgur.com/3/image", 
+      { image: image }, 
+      {
+        headers: { Authorization: "Client-ID 8276f1ad88d01d4" }
+      }
+    );
+
+    fs.unlinkSync(req.file.path); // Xóa file sau khi upload thành công
+    res.json({ link: response.data.data.link }); // link ảnh từ Imgur
+
+  } catch (error) {
+    console.error("Lỗi khi upload ảnh lên Imgur:", error);
+    res.status(500).json({ error: "Lỗi khi upload ảnh lên Imgur!" });
+  }
+});

@@ -27,11 +27,24 @@
                     <h4>999.999.999</h4>
                 </div>
             </div>
-            <div class="greeting">
+            <!-- <div class="greeting">
                 <div class="greeting-icon">
-                    <img src="https://i.imgur.com/bru6iBX.png" alt="User Avatar">
+                    <a routerLink="/login"><img src="https://i.imgur.com/bru6iBX.png" alt="User Avatar"></a>
                 </div>
                 <p>Xin chào, Tran</p>
+            </div> -->
+            <div class="greeting">
+                <div class="greeting-icon">
+                    <a *ngIf="!userName" routerLink="/login">
+                        <img src="https://i.imgur.com/bru6iBX.png" alt="User Avatar">
+                    </a>
+                </div>
+                <p *ngIf="userName">Xin chào, <br>{{ userName }}!</p>
+                <p *ngIf="!userName">Xin chào, Khách!</p>
+                <!-- <i class="bi bi-arrow-bar-right" *ngIf="userName" (click)="logout()" class="logout-btn"></i> -->
+                <button *ngIf="userName" (click)="logout()" class="logout-btn">
+                <i class="fa fa-sign-out"></i> Đăng xuất
+                </button>
             </div>
         </div>
     </header>

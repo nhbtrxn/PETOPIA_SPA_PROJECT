@@ -166,6 +166,13 @@
     z-index: -1;
 }
 
+  
+.greeting i{
+    margin-right: 5px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 1024px) {
     .main-header {
@@ -197,6 +204,9 @@
         justify-content: space-between;
         align-items: center;
         z-index: 1000;
+    }
+    .greeting{
+        margin-right: 1em;
     }
 }
 
