@@ -1,0 +1,142 @@
+*{
+    font-family: 'Work Sans';
+}
+
+.register{
+    padding: 10px;
+    margin: 50px;
+
+}
+
+.big-title{
+    text-align: left;
+    font-size: 2em;
+}
+
+.logo img{
+    width: 65px;
+    margin: 1em;
+}
+
+.left-logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img a{
+    padding-right: 1em;
+}
+
+.logo{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.left-content{
+    flex: 2;
+    margin-right: 1em;
+}
+
+.form-content{
+    background-color: #e3ccbd;
+    border-radius: 10px;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+
+}
+
+.form-row{
+    padding-bottom: 1em;
+}
+
+.form-row label{
+    color: #4f2b1a;
+    font-size: smaller;
+}
+
+.left-content p:nth-child(1){
+    font-size: 2em;
+}
+
+.left-content a{
+    text-decoration: none;
+    color: #e3ccbd;
+}
+
+.left-form-content{
+    flex: 1;
+    margin-right: 0.5em;
+}
+
+
+.right-form-content{
+    flex: 1;
+}
+
+
+.right-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-content i{
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: #e3ccbd;
+    color: #4f2b1a;
+    border-radius: 20px;
+}
+    
+.right-content i:hover {
+    color: #e3ccbd;
+}
+  
+.preview {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 75px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .container{
+        flex-direction: column;
+    }
+    .right-content p:nth-child(1){
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    .right-content{
+        border-radius: 0 0 10px 10px;
+
+    }
+    .form-content{
+        flex-direction: column;
+    }
+    .left-form-content{
+        margin: 0;
+    }
+}

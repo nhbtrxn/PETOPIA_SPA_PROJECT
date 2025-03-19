@@ -1,0 +1,75 @@
+<div class="register-1">
+    <div class="logo">
+        <div class="left-logo">
+            <a routerLink="/homepage">
+                <img src="https://i.imgur.com/7Ut89bt.png" alt="Logo">
+            </a>
+            <div class="big-title">Đăng ký</div>
+        </div>
+        <div class="help">
+            <i class="bi bi-question-circle"></i>
+            <a href="#">Bạn cần giúp đỡ</a>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="left-content">
+            <p>Tạo tài khoản</p>
+            <p>Tạo tài khoản để tận hưởng trải nghiệm được cá nhân hóa.</p>
+            <p>Bạn đã có tài khoản My Petopia? Đăng nhập <a href="/login">tại đây.</a></p>
+            <div class="form-content">
+                <div class="left-form-content">
+                    <div class="form-row">
+                        <label for="name">Họ và Tên*</label>
+                        <input type="text" placeholder="Họ và tên" class="form-control" id="name" [(ngModel)]="username" name="username">
+                    </div>
+                    <div class="form-row">
+                        <label for="pass">Mật khẩu*</label>
+                        <input type="password" placeholder="Mật khẩu" class="form-control" id="pass" [(ngModel)]="password" name="password">
+                    </div>
+                    <div class="form-row">
+                        <label for="pass-again">Xác nhận mật khẩu*</label>
+                        <input type="password" placeholder="Mật khẩu" class="form-control" id="pass-again" [(ngModel)]="confirmPassword" >
+                    </div>
+                </div>
+                <div class="right-form-content">
+                    <div class="form-row">
+                        <label for="dob">Ngày sinh</label>
+                        <input type="date" class="form-control" id="dob" [(ngModel)]="dob" name="dob">
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Số điện thoại*</label>
+                        <input type="tel" placeholder="Số điện thoại" [(ngModel)]="phone" name="phone" class="form-control" readonly>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email*</label>
+                        <input type="email" placeholder="Email" [(ngModel)]="email" name="email" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="term form-check">
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label">Đăng ký nhận thư điện tử từ Petopia</label>
+            </div>
+            <div class="term form-check">
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label">Tôi đã đọc và đồng ý với Chính sách quyền riêng tư. *</label>
+            </div>
+        </div>
+
+        <!-- Chọn ảnh đại diện -->
+        <div class="right-content">
+            <div class="avatar-container" (click)="openFileInput()">
+                <i class="bi bi-person-circle avatar-icon" *ngIf="!imageUrl"></i>
+                <img *ngIf="imageUrl" [src]="imageUrl" class="preview">
+            </div>
+            <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden>
+            <p>Chọn ảnh đại diện</p>
+            <div class="button">
+                <input type="button" class="btn" value="Tiếp tục" (click)="onRegister()">
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-registered-successfully *ngIf="showSuccessPopup" (closePopup)="closePopup()"></app-registered-successfully>
