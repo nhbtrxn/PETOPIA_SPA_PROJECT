@@ -1,4 +1,3 @@
-
 const express = require("express");
 const { google } = require("googleapis");
 const mongoose = require("mongoose");
@@ -107,6 +106,115 @@ syncRoutes.forEach(({ route, sheet, model, key }) => {
             res.status(500).json({ message: `Lỗi khi đồng bộ ${sheet}`, error });
         }
     });
+});
+// Lấy danh sách Product
+app.get("/products", async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products);
+    } catch (error) {
+        console.error("Lỗi khi lấy danh sách Product:", error);
+        res.status(500).json({ message: "Lỗi khi lấy danh sách Product", error });
+    }
+});
+
+// Lấy danh sách ProductAttribute
+app.get("/product-attributes", async (req, res) => {
+    try {
+        const productAttributes = await ProductAttribute.find();
+        res.json(productAttributes);
+    } catch (error) {
+        console.error("Lỗi khi lấy danh sách ProductAttribute:", error);
+        res.status(500).json({ message: "Lỗi khi lấy danh sách ProductAttribute", error });
+    }
+});
+
+// Lấy danh sách Service
+app.get("/services", async (req, res) => {
+    try {
+        const services = await Service.find();
+        res.json(services);
+    } catch (error) {
+        console.error("Lỗi khi lấy danh sách Service:", error);
+        res.status(500).json({ message: "Lỗi khi lấy danh sách Service", error });
+    }
+});
+
+// Lấy danh sách Category
+app.get("/categories", async (req, res) => {
+    try {
+        const categories = await Category.find();
+        res.json(categories);
+    } catch (error) {
+        console.error("Lỗi khi lấy danh sách Category:", error);
+        res.status(500).json({ message: "Lỗi khi lấy danh sách Category", error });
+    }
+});
+
+// Lấy danh sách ServiceAttribute
+app.get("/service-attributes", async (req, res) => {
+    try {
+        const serviceAttributes = await ServiceAttribute.find();
+        res.json(serviceAttributes);
+    } catch (error) {
+        console.error("Lỗi khi lấy danh sách ServiceAttribute:", error);
+        res.status(500).json({ message: "Lỗi khi lấy danh sách ServiceAttribute", error });
+    }
+});
+// Lấy thông tin chi tiết của một dịch vụ theo service_id
+
+app.get("/services/:service_id", async (req, res) => {
+    try {
+        const service = await Service.aggregate([
+            {
+                $match: { service_id: req.params.service_id }
+            },
+            {
+                $lookup: {
+                    from: "serviceattributes", // Collection trong MongoDB
+                    localField: "service_id",
+                    foreignField: "service_id",
+                    as: "attributes"
+                }
+            }
+        ]);
+
+        if (!service || service.length === 0) {
+            return res.status(404).json({ message: "Không tìm thấy dịch vụ" });
+        }
+
+        res.json(service[0]); // Trả về object thay vì mảng
+    } catch (error) {
+        console.error("Lỗi khi lấy chi tiết dịch vụ:", error);
+        res.status(500).json({ message: "Lỗi server", error });
+    }
+});
+
+app.get("/products/:product_id", async (req, res) => {
+    try {
+        const product = await Product.aggregate([
+            {
+                $match: { product_id: req.params.product_id }
+            },
+            {
+                $lookup: {
+                    from: "productattributes", // Collection lưu thông tin chi tiết sản phẩm
+                    localField: "product_id",
+                    foreignField: "product_id",
+                    as: "attributes"
+                }
+            }
+        ]);
+
+        if (!product || product.length === 0) {
+            return res.status(404).json({ message: "Không tìm thấy sản phẩm" });
+        }
+
+        res.json(product[0]); // Trả về object thay vì mảng
+    } catch (error) {
+        console.error("Lỗi khi lấy chi tiết sản phẩm:", error);
+        res.status(500).json({ message: "Lỗi server", error });
+    }
 });
 
 // Kiểm tra server

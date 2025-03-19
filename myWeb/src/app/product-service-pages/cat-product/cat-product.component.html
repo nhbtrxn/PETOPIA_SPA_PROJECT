@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <!-- TẤT CẢ SẢN PHẨM -->
+    <app-cat-product-list 
+        title="TẤT CẢ SẢN PHẨM"
+        [products]="displayedAllProducts"
+        [errorMessage]="errorMessage"
+        [currentIndex]="currentIndexAll"
+        [itemsPerPage]="itemsPerPage"
+        [prevFunction]="prevAll"
+        [nextFunction]="nextAll">
+    </app-cat-product-list>
+    
+    <!-- Thức ăn cho mèo -->
+    <app-cat-product-list
+      title="THỨC ĂN CHO MÈO"
+      [products]="displayedFilteredFood"
+      [prevFunction]="prevFood"
+      [nextFunction]="nextFood">
+    </app-cat-product-list>
+  
+    <!-- Thuốc cho mèo -->
+    <app-cat-product-list
+      title="THUỐC CHO MÈO"
+      [products]="displayedFilteredMedicine"
+      [prevFunction]="prevMedicine"
+      [nextFunction]="nextMedicine">
+    </app-cat-product-list>
+  
+    <!-- Dụng cụ vệ sinh cho mèo -->
+    <app-cat-product-list
+      title="DỤNG CỤ VỆ SINH CHO MÈO"
+      [products]="displayedFilteredHygiene"
+      [prevFunction]="prevHygiene"
+      [nextFunction]="nextHygiene">
+    </app-cat-product-list>
+  
+    <!-- Phụ kiện cho mèo -->
+    <app-cat-product-list
+      title="PHỤ KIỆN CHO MÈO"
+      [products]="displayedFilteredAccessories"
+      [prevFunction]="prevAccessories"
+      [nextFunction]="nextAccessories">
+    </app-cat-product-list>
+  
+    <!-- Quần áo cho mèo -->
+    <app-cat-product-list
+      title="QUẦN ÁO CHO MÈO"
+      [products]="displayedFilteredClothing"
+      [prevFunction]="prevClothing"
+      [nextFunction]="nextClothing">
+    </app-cat-product-list>
+  
+    <!-- Đồ dùng cho mèo -->
+    <app-cat-product-list
+      title="ĐỒ DÙNG CHO MÈO"
+      [products]="displayedFilteredSupplies"
+      [prevFunction]="prevSupplies"
+      [nextFunction]="nextSupplies">
+    </app-cat-product-list>
+  </div>
