@@ -8,7 +8,6 @@ const User = require("./models/User");
 const multer = require("multer");
 const axios = require("axios");
 
-// Cấu hình môi trường
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -167,7 +166,6 @@ app.get("/service-attributes", async (req, res) => {
     }
 });
 // Lấy thông tin chi tiết của một dịch vụ theo service_id
-
 app.get("/services/:service_id", async (req, res) => {
     try {
         const service = await Service.aggregate([
@@ -203,7 +201,7 @@ app.get("/products/:product_id", async (req, res) => {
             },
             {
                 $lookup: {
-                    from: "productattributes", // Collection lưu thông tin chi tiết sản phẩm
+                    from: "productattributes",
                     localField: "product_id",
                     foreignField: "product_id",
                     as: "attributes"
