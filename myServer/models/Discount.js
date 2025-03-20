@@ -8,5 +8,4 @@ const discountSchema = new mongoose.Schema({
     description: { type: String, default: "" }, 
     active: { type: Boolean, default: true }, 
 });
-
 module.exports = mongoose.model("Discount", discountSchema);
