@@ -4,9 +4,9 @@
       {{ errorMessage }}
     </div>
     <div *ngIf="!errorMessage" class="d-flex align-items-center">
-      <button class="btn btn-outline-secondary me-2" (click)="prevFunction()" [disabled]="currentIndex === 0">
-        << 
-      </button>
+      <button class="btn btn-outline-secondary" (click)="prevFunction()" [disabled]="currentIndex === 0">
+        <<
+        </button>
   
       <div class="row flex-nowrap overflow-hidden">
         <div class="col-md-3" *ngFor="let product of products">
@@ -20,9 +20,8 @@
         </div>
       </div>
   
-      <button class="btn btn-outline-secondary ms-2" (click)="nextFunction()" [disabled]="currentIndex + itemsPerPage >= products.length">
-        >>
-      </button>
+      <button class="btn btn-outline-secondary" (click)="nextFunction()" [disabled]="currentIndex + itemsPerPage >= products.length">>></button>
+
     </div>
     <div class="text-center mt-4"> 
       <button type="button" class="btn btn-outline-secondary">Xem thêm</button>

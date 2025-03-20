@@ -4,11 +4,11 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  private valueSource = new BehaviorSubject<string>(''); // Giá trị mặc định
+  private valueSource = new BehaviorSubject<string>('');
   currentValue = this.valueSource.asObservable();
 
   setValue(value: string) {
-    this.valueSource.next(value); // Gán giá trị mới
+    this.valueSource.next(value); 
   }
   constructor() { }
   

@@ -9,7 +9,6 @@ export class ServiceService {
 
   constructor(private http: HttpClient) {}
 
-  // Lấy danh sách service
   getServices(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }

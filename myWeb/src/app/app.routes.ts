@@ -9,7 +9,7 @@ import { PolicyComponent } from './pages/policy/policy.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProductServiceComponent } from './product-service-pages/product-service/product-service.component';
-import { ProductComponent } from './product-service-pages/product/product.component';
+import { PetProductComponent } from './product-service-pages/pet-product/pet-product.component';
 import { ServiceComponent } from './product-service-pages/service/service.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
@@ -22,8 +22,8 @@ export const AppRoutes: Routes = [
     path: 'blog', 
     component: BlogComponent,
     children: [
-      { path: '', redirectTo: '1', pathMatch: 'full' }, // Mặc định mở bài viết đầu tiên (id = 1)
-      { path: ':id', component: PostDetailComponent } // Hiển thị bài viết chi tiết khi có ID
+      { path: '', redirectTo: '1', pathMatch: 'full' },
+      { path: ':id', component: PostDetailComponent } 
     ] 
   },
   { path: 'booking', component: BookingComponent },
@@ -33,7 +33,7 @@ export const AppRoutes: Routes = [
   { path: 'policy', component: PolicyComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'product-service', component: ProductServiceComponent},
-  { path: 'product', component: ProductComponent},
+  { path: 'product', component: PetProductComponent},
   { path: 'services', component: ServiceComponent }, 
   { path: 'service/:service_id', component: ServiceDetailComponent },
   { path: 'product/:product_id', component: ProductDetailComponent },

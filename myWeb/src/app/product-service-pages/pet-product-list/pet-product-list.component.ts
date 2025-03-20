@@ -1,14 +1,14 @@
-import { Component,Input,SimpleChanges } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-cat-product-list',
+  selector: 'app-pet-product-list',
   imports:[CommonModule,RouterModule],
-  templateUrl: './catproduct-list.component.html',
-  styleUrl: './cat-product-list.component.css'
+  templateUrl: './pet-product-list.component.html',
+  styleUrl: './pet-product-list.component.css'
 })
-export class CatProductListComponent {
+export class PetProductListComponent {
   @Input() title: string = ''; 
   @Input() products: any[] = []; 
   @Input() errorMessage!: string | null;
@@ -17,8 +17,4 @@ export class CatProductListComponent {
 
   @Input() prevFunction!: () => void;
   @Input() nextFunction!: () => void;
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('Dữ liệu đầu vào:', this.products);
-  }
-
 }

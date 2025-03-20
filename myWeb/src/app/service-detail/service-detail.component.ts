@@ -11,13 +11,13 @@ import { CommonModule } from '@angular/common';
 })
 export class ServiceDetailComponent implements OnInit { 
   service: any;
-  activeSlide = 0; // Slide hiện tại
-  visibleThumbnails: any[] = []; // Danh sách ảnh hiển thị
-  maxVisibleThumbnails = 3; // Số lượng ảnh hiển thị cùng lúc
+  activeSlide = 0; 
+  visibleThumbnails: any[] = []; 
+  maxVisibleThumbnails = 3; 
   showDescription = false;
-  showPricing = false; // Điều khiển bảng giá
-  selectedSize: any = null; // Kích thước được chọn
-  selectedPrice: number = 0; // Giá hiển thị
+  showPricing = false; 
+  selectedSize: any = null; 
+  selectedPrice: number = 0; 
 
   constructor(
     private route: ActivatedRoute,
@@ -30,13 +30,13 @@ export class ServiceDetailComponent implements OnInit {
       this.serviceService.getServiceById(serviceId).subscribe({
         next: (data) => {
           if (Array.isArray(data) && data.length > 0) {
-            this.service = data[0]; // Nếu API trả về mảng
+            this.service = data[0]; 
           } else {
-            this.service = data; // Nếu API trả về một object
+            this.service = data; 
           }
           this.updateVisibleThumbnails();
           if (this.service.attributes?.length) {
-            this.selectSize(this.service.attributes[0]); // Chọn size đầu tiên mặc định
+            this.selectSize(this.service.attributes[0]); 
           }
         },
         error: (err) => {
@@ -81,7 +81,6 @@ export class ServiceDetailComponent implements OnInit {
     this.showPricing = !this.showPricing;
   }
 
-  // Chọn kích thước và cập nhật giá
   selectSize(attr: any) {
     this.selectedSize = attr;
     this.selectedPrice = attr.min_price;

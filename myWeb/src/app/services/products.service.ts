@@ -14,7 +14,6 @@ export class ProductService {
     return this.http.get<any[]>(this.apiUrlProducts);
   }
 
-  // Lấy chi tiết sản phẩm theo ID
   getProductById(productId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrlProducts}/${productId}`);
   }

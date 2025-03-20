@@ -1,0 +1,54 @@
+
+  <div class="product">
+    <app-pet-product-list 
+      [title]="petType === 'dog' ? 'TẤT CẢ SẢN PHẨM CHO CHÓ' : 'TẤT CẢ SẢN PHẨM CHO MÈO'"
+      [products]="productCategories.all.displayed"
+      [errorMessage]="errorMessage"
+      [currentIndex]="productCategories.all.currentIndex"
+      [itemsPerPage]="itemsPerPage"
+      [prevFunction]="changePage.bind(this, 'all', false)"
+      [nextFunction]="changePage.bind(this, 'all', true)">
+    </app-pet-product-list>
+  
+    <app-pet-product-list 
+      [title]="petType === 'dog' ? 'THỨC ĂN CHO CHÓ' : 'THỨC ĂN CHO MÈO'"
+      [products]="productCategories.food.displayed"
+      [prevFunction]="changePage.bind(this, 'food', false)"
+      [nextFunction]="changePage.bind(this, 'food', true)">
+    </app-pet-product-list>
+    
+    <app-pet-product-list 
+      [title]="petType === 'dog' ? 'THUỐC CHO CHÓ' : 'THUỐC CHO MÈO'"
+      [products]="productCategories.medicine.displayed"
+      [prevFunction]="changePage.bind(this, 'medicine', false)"
+      [nextFunction]="changePage.bind(this, 'medicine', true)">
+    </app-pet-product-list>
+  
+    <app-pet-product-list 
+      [title]="petType === 'dog' ? 'DỤNG CỤ VỆ SINH CHO CHÓ' : 'DỤNG CỤ VỆ SINH CHO MÈO'"
+      [products]="productCategories.hygiene.displayed"
+      [prevFunction]="changePage.bind(this, 'hygiene', false)"
+      [nextFunction]="changePage.bind(this, 'hygiene', true)">
+    </app-pet-product-list>
+  
+    <app-pet-product-list 
+      [title]="petType === 'dog' ? 'PHỤ KIỆN CHO CHÓ' : 'PHỤ KIỆN CHO MÈO'"
+      [products]="productCategories.accessories.displayed"
+      [prevFunction]="changePage.bind(this, 'accessories', false)"
+      [nextFunction]="changePage.bind(this, 'accessories', true)">
+    </app-pet-product-list>
+  
+    <app-pet-product-list 
+      [title]="petType === 'dog' ? 'QUẦN ÁO CHO CHÓ' : 'QUẦN ÁO CHO MÈO'"
+      [products]="productCategories.clothing.displayed"
+      [prevFunction]="changePage.bind(this, 'clothing', false)"
+      [nextFunction]="changePage.bind(this, 'clothing', true)">
+    </app-pet-product-list>
+  
+    <app-pet-product-list 
+      [title]="petType === 'dog' ? 'ĐỒ DÙNG CHO CHÓ' : 'ĐỒ DÙNG CHO MÈO'"
+      [products]="productCategories.supplies.displayed"
+      [prevFunction]="changePage.bind(this, 'supplies', false)"
+      [nextFunction]="changePage.bind(this, 'supplies', true)">
+    </app-pet-product-list>
+  </div>

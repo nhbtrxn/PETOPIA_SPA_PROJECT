@@ -1,31 +1,32 @@
+
 <div class="service">
   <app-service-list 
     title="DỊCH VỤ BÁN CHẠY, GIẢM GIÁ"
-    [services]="displayedAllServices"
-    [errorMessage]="''"
-    [currentIndex]="currentIndexAll"
+    [services]="serviceCategories.all.displayed"
+    [errorMessage]="errorMessage"
+    [currentIndex]="serviceCategories.all.currentIndex"
     [itemsPerPage]="itemsPerPage"
-    [prevFunction]="prevAll"
-    [nextFunction]="nextAll">
+    [prevFunction]="changePage.bind(this, 'all', false)"
+    [nextFunction]="changePage.bind(this, 'all', true)">
   </app-service-list>
 
   <app-service-list 
     title="DỊCH VỤ KHÁCH SẠN, THÚ CƯNG"
-    [services]="displayedFilteredHotel"
+    [services]="serviceCategories.hotel.displayed"
     [errorMessage]="errorMessage"
-    [currentIndex]="currentIndexHotel"
+    [currentIndex]="serviceCategories.hotel.currentIndex"
     [itemsPerPage]="itemsPerPage"
-    [prevFunction]="prevHotel"
-    [nextFunction]="nextHotel">
+    [prevFunction]="changePage.bind(this, 'hotel', false)"
+    [nextFunction]="changePage.bind(this, 'hotel', true)">
   </app-service-list>
 
   <app-service-list 
     title="DỊCH VỤ SPA, THÚ CƯNG"
-    [services]="displayedFilteredSpa"
-    [errorMessage]="errorMessageSpa"
-    [currentIndex]="currentIndexSpa"
+    [services]="serviceCategories.spa.displayed"
+    [errorMessage]="errorMessage"
+    [currentIndex]="serviceCategories.spa.currentIndex"
     [itemsPerPage]="itemsPerPage"
-    [prevFunction]="prevSpa"
-    [nextFunction]="nextSpa">
+    [prevFunction]="changePage.bind(this, 'spa', false)"
+    [nextFunction]="changePage.bind(this, 'spa', true)">
   </app-service-list>
 </div>

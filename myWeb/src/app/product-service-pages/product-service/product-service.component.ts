@@ -1,55 +1,53 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
-import { ProductComponent } from '../product/product.component';
-import { DogProductComponent } from '../dog-product/dog-product.component';
+import { PetProductComponent } from '../pet-product/pet-product.component';
 import { ServiceComponent } from '../service/service.component';
-import { CatProductComponent } from '../cat-product/cat-product.component';
 
 @Component({
   selector: 'app-product-service',
-  imports: [CommonModule, ServiceComponent, ProductComponent, DogProductComponent, CatProductComponent],
+  imports: [CommonModule, ServiceComponent, PetProductComponent],
   templateUrl: './product-service.component.html',
-  styleUrls: ['./product-service.component.css'] // 
+  styleUrls: ['./product-service.component.css'],
 })
 export class ProductServiceComponent {
   isMenuOpen = false;
   activeSection: string | null = null;
-  choosenCategory: string = 'service-category';
+  choosenCategory: string = 'product-category'; 
 
   rotatedIcons: { [key: string]: boolean } = {
-    'dog-product-bar': false,
+    'dog-product-bar': true,
     'cat-product-bar': false,
   };
 
   visibleSections: { [key: string]: boolean } = {
-    'dog-product-bar': false,
+    'dog-product-bar': true,
     'cat-product-bar': false,
   };
 
   constructor(private sharedService: SharedService) {}
 
   toggleIcon(key: string): void {
+    console.log('Key nhận được:', key);
+    console.log('Trạng thái trước:', this.visibleSections[key]);
+
     if (!(key in this.visibleSections)) {
       console.error(`Key ${key} không tồn tại trong visibleSections`);
       return;
     }
 
-    // Đảo trạng thái ẩn/hiện và xoay icon
     this.visibleSections[key] = !this.visibleSections[key];
     this.rotatedIcons[key] = !this.rotatedIcons[key];
 
-    console.log("visibleSections:", this.visibleSections);
-    console.log("rotatedIcons:", this.rotatedIcons);
+    console.log('Trạng thái sau:', this.visibleSections[key]);
+    console.log('Giá trị gửi đi:', this.rotatedIcons[key] ? key : 'product-bar');
 
-    // Gửi giá trị tới SharedService
-    const valueToSend = this.rotatedIcons[key] ? key : 'product-bar';
-    this.sendValue(valueToSend);
+    this.sendValue(this.rotatedIcons[key] ? key : 'product-bar');
   }
 
   toggleCategory(category: string, event: Event): void {
     event.preventDefault();
-    this.choosenCategory = (this.choosenCategory === category) ? 'service-category' : category;
+    this.choosenCategory = category;
   }
 
   toggleMenu() {
