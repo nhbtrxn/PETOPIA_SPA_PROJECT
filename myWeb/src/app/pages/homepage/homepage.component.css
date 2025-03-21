@@ -1,3 +1,314 @@
 .homepage{
     margin-top: 15%;
 }
+/* BANNER 1*/
+.container {
+    padding: 10px 15px;
+    /* border: 1px solid red; */
+}
+.banner {
+    display: flex;
+    gap: 10px;
+    margin-top: 170px;
+    margin-bottom: 30px;
+    align-items: stretch; 
+}
+.banner-main {
+    flex: 1.5;
+}
+.side-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+.banner-link {
+    display: flex;
+    height: 100%;
+  }
+.banner-main img {
+    width: 100%;  
+    height: 100%; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.side-banner img {
+    width: 100%; 
+    flex: 1; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.banner-main img:hover, .side-banner img:hover, .al-banner img:hover, .badge-banner:hover, .forum-banner:hover, .dog-products:hover, .cat-products:hover, .pate img:hover, .hat img:hover, .dochoi img:hover, .service-item img:hover {
+    transform: scale(1.05);
+}
+/* Banner 2 */
+.small-section {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 10px; 
+  }
+  
+  .small-box {
+    flex: 1;
+    min-width: 180px; 
+    padding: 15px; 
+    background-color: #E3CCBD;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    transition: transform 0.3s ease; 
+  }
+  
+  .small-box:hover {
+    transform: translateY(-5px); 
+  }
+  
+  .small-box img {
+    width: 30px; 
+    height: 30px;
+    margin-bottom: 10px; 
+    border: 2px solid #fff; 
+    border-radius: 50%; 
+  }
+  
+  .small-box strong {
+    font-size: 1rem;
+    font-weight: 700; 
+    color: #5A3E36; 
+    text-transform: uppercase; 
+    margin-bottom: 5px; 
+  }
+  
+  .small-box p {
+    font-size: 0.9rem; 
+    color: #5A3E36; 
+    margin: 0; 
+  }
+
+
+/* Special Features Section */
+.special {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    padding: 20px 20px;
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  .special h3 {
+    font-size: 2rem; 
+    font-weight: 700; 
+    color: #4F2B1A; 
+    position: relative; 
+  }
+  
+  .special h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #FFC107; 
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; 
+  }
+  
+  .special:hover h3::after {
+    width: 50%; 
+  }
+  .special p {
+    font-size: 1.1rem; 
+    color:#4F2B1A; 
+    max-width: 600px; 
+    line-height: 1.6; 
+    transition: color 0.3s ease; 
+  }
+  
+  .special:hover {
+    transform: translateY(-5px); 
+  }
+
+/* BANNER 3*/
+.al-banner{
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+}
+.al-banner img{
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: auto;
+    width:100%
+}
+
+/* BANNER 4*/
+.discount-banner {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: stretch; 
+}
+.badge-banner {
+    flex: 1.2;
+}
+
+.forum-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 2.2;
+}
+.badge-banner img {
+    width: 100%;  
+    height: 100%; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.forum-banner img {
+    width: 100%; 
+    flex: 1; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+
+/*BANNER 5*/
+.pet-products-banner {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    align-items: stretch; 
+}
+.dog-products{
+    flex: 1;
+}
+
+.cat-products {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+.dog-products img {
+    width: 100%;  
+    height: 100%; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.cat-products img {
+    width: 100%; 
+    flex: 1; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/*BANNER 6*/
+.product-categories {
+    display: flex;
+    gap: 30px; 
+    justify-content: center; 
+    padding: 0;
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+}
+
+.pate, .hat, .dochoi {
+    flex: 1; 
+    max-width: 400px; 
+    display: flex;
+    justify-content: center; 
+}
+
+.pate img, .hat img, .dochoi img {
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: transform 0.3s; 
+}
+
+
+/*BANNER 7*/
+.pricing-table{
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    height: auto;
+}
+.pricing-table img{
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: auto;
+    width:100%
+}
+
+
+.service-container {
+    background-color: #5A3E36; 
+    border-radius: 15px; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 30px; 
+    width: 100%; 
+}
+
+.service-item {
+    display: flex;
+    justify-content: center; 
+}
+
+.service-item img {
+    width: 100%;
+    max-width: 350px; 
+    height: auto; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: transform 0.3s; 
+}
+
+.view-more {
+    background-color: #4F2B1A; 
+    color: #fff; 
+    font-size: 1rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    margin-top: 30px; 
+}
+
+.view-more:hover {
+    background-color: #A68A64; 
+}
