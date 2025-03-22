@@ -1,31 +1,46 @@
-
 <div class="product-service">
+  <!-- Danh mục dịch vụ & sản phẩm -->
   <div class="product-service-category">
     <nav>
       <a (click)="toggleCategory('service-category', $event); sendValue('service-bar')" 
-         [ngClass]="choosenCategory === 'service-category' ? 'border-highlight' : ''">DỊCH VỤ</a>
+         [ngClass]="choosenCategory === 'service-category' ? 'border-highlight' : ''">
+        DỊCH VỤ
+      </a>
       <a (click)="toggleCategory('product-category', $event); sendValue('product-bar')"  
-         [ngClass]="choosenCategory === 'product-category' ? 'border-highlight' : ''">SẢN PHẨM</a>
+         [ngClass]="choosenCategory === 'product-category' ? 'border-highlight' : ''">
+        SẢN PHẨM
+      </a>
     </nav>
   </div>
 
+  <!-- Hiển thị dịch vụ khi chọn -->
   <div *ngIf="choosenCategory === 'service-category'">
     <app-service></app-service>
   </div>
 
+  <!-- Hiển thị sản phẩm khi chọn -->
   <div id="product-list" *ngIf="choosenCategory === 'product-category'">
+    <!-- Sản phẩm cho chó -->
     <p>
       <i class="bi bi-chevron-compact-right" 
-         [ngClass]="rotatedIcons['dog-product-bar'] ? 'rotate' : ''"></i>
-      <a (click)="toggleIcon('dog-product-bar')"> SẢN PHẨM CHO CHÓ</a>
+         [ngClass]="rotatedIcons['dog-product-bar'] ? 'rotate' : ''">
+      </i>
+      <a (click)="toggleIcon('dog-product-bar')">SẢN PHẨM CHO CHÓ</a>
     </p>
-    <div *ngIf="visibleSections['dog-product-bar']"><app-pet-product [petType]="'dog'"></app-pet-product></div>
+    <div *ngIf="visibleSections['dog-product-bar']">
+      <app-pet-product [petType]="'dog'"></app-pet-product>
+    </div>
     <hr>
+
+    <!-- Sản phẩm cho mèo -->
     <p>
       <i class="bi bi-chevron-compact-right" 
-         [ngClass]="rotatedIcons['cat-product-bar'] ? 'rotate' : ''"></i>
+         [ngClass]="rotatedIcons['cat-product-bar'] ? 'rotate' : ''">
+      </i>
       <a (click)="toggleIcon('cat-product-bar')">SẢN PHẨM CHO MÈO</a>
     </p>
-    <div *ngIf="visibleSections['cat-product-bar']"><app-pet-product [petType]="'cat'"></app-pet-product></div>
+    <div *ngIf="visibleSections['cat-product-bar']">
+      <app-pet-product [petType]="'cat'"></app-pet-product>
+    </div>
   </div>
 </div>

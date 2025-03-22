@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,94 +9,119 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="faq.component.css">
 </head>
-
 <body>
-
     <div class="container">
         <div class="sidebar">
             <ul>
-                <li><a href="#gioi-thieu" (click)="showGroup($event, 'gioi-thieu')">Giới Thiệu về PETOPIA SPA</a></li>
-                <li><a href="#lich-hen" (click)="showGroup($event, 'lich-hen')">Lịch Hẹn và Dịch Vụ</a></li>
-                <li><a href="#gia_ca" (click)="showGroup($event, 'gia_ca')">Giá Cả và Chính Sách</a></li>
-                <li><a href="#san-pham" (click)="showGroup($event, 'san-pham')">Sản Phẩm và Mua Sắm</a></li>
-                <li><a href="#lien-he" (click)="showGroup($event, 'lien-he')">Liên Hệ và Hỗ Trợ</a></li>
+                <li><a href="#about" (click)="showGroup($event, 'about')">Giới Thiệu Về PETOPIA SPA</a></li>
+                <li><a href="#appointments" (click)="showGroup($event, 'appointments')">Lịch Hẹn và Dịch Vụ</a></li>
+                <li><a href="#pricing" (click)="showGroup($event, 'pricing')">Giá Cả và Chính Sách</a></li>
+                <li><a href="#products" (click)="showGroup($event, 'products')">Sản Phẩm và Mua Sắm</a></li>
+                <li><a href="#contact" (click)="showGroup($event, 'contact')">Liên Hệ và Hỗ Trợ</a></li>
             </ul>
         </div>
-
         <div class="faq-wrapper">
             <div class="faq-container" id="faqContent">
                 <div class="faq-header">
                     <h1>Câu Hỏi Thường Gặp (FAQ)</h1>
                 </div>
-
-                <!-- Nhóm FAQ -->
-                <div id="gioi-thieu" class="faq-group">
-                    <h2>Giới Thiệu về PETOPIA SPA</h2>
+                <div id="about" class="faq-group">
+                    <h2>Giới Thiệu Về PETOPIA SPA</h2>
                     <div class="faq-item">
                         <div class="faq-question" (click)="toggleAnswer($event)">
                             PETOPIA SPA là gì?
                         </div>
                         <div class="faq-answer">
-                            PETOPIA SPA là một spa chuyên chăm sóc thú cưng...
+                            PETOPIA SPA là một cửa hàng chuyên cung cấp dịch vụ chăm sóc thú cưng và các sản phẩm chất lượng cao dành cho thú cưng. Với nhiều năm kinh nghiệm, chúng tôi mang đến trải nghiệm tuyệt vời nhất đến với khách hàng.
                         </div>
                     </div>
                 </div>
-
-                <div id="lich-hen" class="faq-group">
+                <div id="appointments" class="faq-group">
                     <h2>Lịch Hẹn và Dịch Vụ</h2>
                     <div class="faq-item">
                         <div class="faq-question" (click)="toggleAnswer($event)">
                             Tôi cần đặt lịch trước hay có thể đến trực tiếp?
                         </div>
                         <div class="faq-answer">
-                            Chúng tôi khuyến khích khách hàng đặt lịch trước...
+                            Chúng tôi khuyến khích quý khách đặt lịch trước để đảm bảo thời gian phục vụ tốt nhất. Tuy nhiên, nếu quý khách đến trực tiếp, chúng tôi sẽ cố gắng sắp xếp lịch ngay khi có thể.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
+                            PETOPIA SPA có nhận chăm sóc thú cưng tại nhà không?
+                        </div>
+                        <div class="faq-answer">
+                            Hiện tại, chúng tôi chỉ cung cấp dịch vụ tại cửa hàng. Tuy nhiên, chúng tôi đang lên kế hoạch triển khai dịch vụ chăm sóc tại nhà trong tương lai.
                         </div>
                     </div>
                 </div>
-
-                <div id="gia_ca" class="faq-group">
+                <div id="pricing" class="faq-group">
                     <h2>Giá Cả và Chính Sách</h2>
                     <div class="faq-item">
                         <div class="faq-question" (click)="toggleAnswer($event)">
                             Giá cả dịch vụ tại PETOPIA SPA như thế nào?
                         </div>
                         <div class="faq-answer">
-                            Giá cả dịch vụ tại PETOPIA SPA phụ thuộc vào loại dịch vụ...
+                            Giá cả dịch vụ được niêm yết rõ ràng và phụ thuộc vào loại dịch vụ cũng như kích thước của thú cưng. Quý khách vui lòng liên hệ trực tiếp hoặc truy cập website để biết thêm chi tiết.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
+                            PETOPIA SPA có chính sách hủy lịch hẹn không?
+                        </div>
+                        <div class="faq-answer">
+                            Chúng tôi chấp nhận hủy lịch hẹn trước ít nhất 24 giờ. Nếu hủy trong vòng 24 giờ, có thể áp dụng phí hủy lịch.
                         </div>
                     </div>
                 </div>
-
-                <div id="san-pham" class="faq-group">
+                <div id="products" class="faq-group">
                     <h2>Sản Phẩm và Mua Sắm</h2>
                     <div class="faq-item">
                         <div class="faq-question" (click)="toggleAnswer($event)">
                             PETOPIA SPA có cung cấp sản phẩm cho thú cưng không?
                         </div>
                         <div class="faq-answer">
-                            Có, chúng tôi cung cấp các sản phẩm chăm sóc thú cưng...
+                            Có, chúng tôi cung cấp đa dạng các sản phẩm chất lượng cao dành cho thú cưng, bao gồm thức ăn, đồ chơi, phụ kiện và sản phẩm vệ sinh.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
+                            Tôi có thể mua sản phẩm online không?
+                        </div>
+                        <div class="faq-answer">
+                            Có, quý khách có thể đặt mua sản phẩm thông qua website hoặc fanpage của chúng tôi. Chúng tôi hỗ trợ giao hàng toàn quốc.
                         </div>
                     </div>
                 </div>
-
-                <div id="lien-he" class="faq-group">
+                <div id="contact" class="faq-group">
                     <h2>Liên Hệ và Hỗ Trợ</h2>
                     <div class="faq-item">
                         <div class="faq-question" (click)="toggleAnswer($event)">
                             Làm thế nào để liên hệ với PETOPIA SPA?
                         </div>
                         <div class="faq-answer">
-                            Bạn có thể liên hệ với chúng tôi qua số điện thoại, email...
+                            Quý khách có thể liên hệ với chúng tôi qua:
+                            <ul>
+                                <li>Hotline: 999.999.999</li>
+                                <li>Email: info&#64;petopiaspa.vn</li>
+                                <li>Fanpage: <a href="https://www.facebook.com/petopiaspa" target="_blank">PETOPIA SPA Official</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" (click)="toggleAnswer($event)">
+                            PETOPIA SPA có hỗ trợ khách hàng 24/7 không?
+                        </div>
+                        <div class="faq-answer">
+                            Chúng tôi hỗ trợ khách hàng từ 8:30 sáng đến 7:30 tối hàng ngày. Ngoài giờ làm việc, quý khách có thể để lại tin nhắn, chúng tôi sẽ phản hồi sớm nhất có thể.
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>
+

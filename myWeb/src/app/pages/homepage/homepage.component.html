@@ -31,7 +31,7 @@
     </div>
 
     <div class="special">
-        <h3>CÁC CHỨC NĂNG ĐẶT BIỆT TẠI PETOPIA SPA</h3>
+        <h3>CÁC CHỨC NĂNG ĐẶC BIỆT TẠI PETOPIA SPA</h3>
         <p>Petopia Spa tự hào mang đến trải nghiệm đặc biệt, nơi thú cưng được yêu thương và chăm sóc tận tâm🐾✨</p>
     </div>
 
@@ -51,6 +51,25 @@
         <h3>SẢN PHẨM DÀNH CHO BOSS</h3>
         <p>Các loại hạt, pate,...đầy dinh dưỡng dành cho thú cưng của của bạn🐾✨ </p>
     </div>
+    <div class="special">
+        <h3>SẢN PHẨM CHO CHÓ</h3>
+    </div>
+    <app-pet-product-list
+        [products]="ProductsDog"
+        [prevFunction]="changePage.bind(this, 'Dog', false)"
+        [nextFunction]="changePage.bind(this, 'Dog', true)">
+    </app-pet-product-list>
+    
+    <div class="special">
+        <h3>SẢN PHẨM CHO MÈO</h3>
+    </div>
+    <app-pet-product-list
+        [products]="ProductsCat"
+        [prevFunction]="changePage.bind(this, 'Cat', false)"
+        [nextFunction]="changePage.bind(this, 'Cat', true)">
+    </app-pet-product-list>
+    
+
     <div class="pet-products-banner">
         <div class="dog-products">
             <a href="#" class="banner-link"> <img src="https://i.imgur.com/y9CEhht.png" alt="Sản phẩm cho mèo"> </a>
@@ -59,6 +78,18 @@
             <a href="#" class="banner-link"><img src="https://i.imgur.com/DkvrzFF.png" alt="Sản phẩm cho chó"> </a>
             </div>
     </div>
+    <div class="special">
+        <h3>SẢN PHẨM GIẢM GIÁ</h3>
+    </div>
+    <app-pet-product-list
+    [products]="discountedProducts"
+    [prevFunction]="changePage.bind(this, 'discount', false)"
+    [nextFunction]="changePage.bind(this, 'discount', true)">
+    </app-pet-product-list>
+    <div class="special">
+        <h3>MUA NGAY ĐỂ TẬN HƯỞNG ƯU ĐÃI</h3>
+    </div>
+    <app-coupon></app-coupon>
     <div class="product-categories">
         <div class="pate">
             <a href="#" class="banner-link"> <img src="https://i.imgur.com/6SuSeIx.png" alt="pate cho chó"></a>
@@ -104,5 +135,9 @@
         </div>
         <button class="view-more">XEM THÊM</button>
     </div>
+    <div class="special">
+        <h3>KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI?</h3>
+    </div>
+    <app-feedback></app-feedback>
 
 </div>

@@ -1,51 +1,182 @@
- <!DOCTYPE html>
- <html lang="vi">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Chính Sách - PETOPIA SPA</title>
-     <link rel="stylesheet" href="policy.component.css">
- </head>
- <body>
-     <div class="container">
-         <div class="sidebar">
-             <ul>
-                 <li><a href="#privacy" (click)="showGroup($event, 'privacy')">Chính sách bảo mật</a></li>
-                 <li><a href="#return" (click)="showGroup($event, 'return')">Chính sách đổi trả</a></li>
-                 <li><a href="#terms" (click)="showGroup($event, 'terms')">Điều khoản sử dụng</a></li>
-             </ul>
-         </div>
- 
-         <div class="faq-wrapper">
-             <h2><i class="fas fa-scroll"></i> Chính sách và Điều khoản</h2>
- 
-             <div id="privacy">
-                 <button class="accordion" (click)="toggleSection('privacy')">
-                     <i class="fas fa-shield-alt"></i> Chính sách bảo mật
-                 </button>
-                 <div class="panel" [ngClass]="{ 'active': activeSection === 'privacy' }" [style.maxHeight]="activeSection === 'privacy' ? panelHeight : '0'">
-                     <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và đảm bảo quyền riêng tư tối đa.</p>
-                 </div>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách - PETOPIA SPA</title>
+    <link rel="stylesheet" href="policy.component.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#terms" (click)="showGroup($event, 'terms')">Điều khoản sử dụng</a></li>
+                <li><a href="#privacy" (click)="showGroup($event, 'privacy')">Chính sách bảo mật</a></li>
+                <li><a href="#return" (click)="showGroup($event, 'return')">Chính sách đổi trả</a></li>
+                <li><a href="#delivery" (click)="showGroup($event, 'delivery')">Chính sách vận chuyển/giao nhận</a></li>
+            </ul>
+        </div>
+        <div class="faq-wrapper">
+            <h2><i class="fas fa-scroll"></i> Chính sách và Điều khoản</h2>
+            <div id="terms">
+                <button class="accordion" (click)="toggleSection('terms')">
+                    <i class="fas fa-file-contract"></i> Điều khoản sử dụng
+                </button>
+                <div class="panel" #termsPanel [ngClass]="{ 'active': activeSection === 'terms' }"
+                    [style.maxHeight]="getPanelHeight('terms')">
+                    <p>
+                        <b>1. Giới thiệu</b><br>
+                        Chào mừng quý khách hàng đến với PETOPIA.
+                        Khi quý khách hàng truy cập vào website của PETOPIA, điều này đồng nghĩa với việc quý khách đồng
+                        ý với các điều khoản sử dụng dưới đây. PETOPIA có quyền thay đổi, chỉnh sửa, bổ sung hoặc loại
+                        bỏ bất kỳ phần nào trong điều khoản sử dụng vào bất cứ lúc nào. Những thay đổi này có hiệu lực
+                        ngay khi được đăng trên website mà không cần thông báo trước. Việc quý khách tiếp tục sử dụng
+                        website sau khi các thay đổi điều khoản được đăng tải có nghĩa là quý khách đã chấp nhận những
+                        thay đổi đó.<br>
+                        <b>2. Hướng dẫn sử dụng website</b>
+                        <br>
+                        Khi truy cập website PETOPIA, quý khách hàng phải đảm bảo đủ 18 tuổi hoặc truy cập dưới sự giám
+                        sát của người bảo hộ hợp pháp. PETOPIA không chịu trách nhiệm đối với bất kỳ tổn thất hay thiệt
+                        hại nào liên quan đến việc không tuân thủ quy định này.
+                        Khách hàng cam kết sẽ cung cấp thông tin chính xác, đầy đủ khi thực hiện giao dịch trên website
+                        và chịu trách nhiệm về toàn bộ thông tin đã cung cấp. PETOPIA có quyền từ chối hoặc hủy đơn hàng
+                        nếu phát hiện khách hàng cung cấp thông tin sai lệch.<br>
+                        <b>3. Thanh toán an toàn và tiện lợi</b>
+                        <br>
+                        PETOPIA hỗ trợ nhiều phương thức thanh toán linh hoạt nhằm mang đến sự tiện lợi cho khách
+                        hàng:<br>
+                        Cách 1: Thanh toán sau (COD) – áp dụng cho đơn hàng nội thành.<br>
+                        Cách 2: Thanh toán qua ứng dụng ngân hàng/ví điện tử bằng mã QR.<br>
+                        Thông tin tài khoản thanh toán:<br>
+                        Ngân hàng: [BIDV]<br>
+                        Số tài khoản: [123456789]<br>
+                        Chủ tài khoản: [PETOPIA SPA]<br>
+                        Nội dung chuyển khoản: Họ tên khách hàng + Số điện thoại đặt hàng.<br>
+                    </p>
+                </div>
+            </div>
+            <div id="privacy">
+                <button class="accordion" (click)="toggleSection('privacy')">
+                    <i class="fas fa-shield-alt"></i> Chính sách bảo mật
+                </button>
+                <div class="panel" #privacyPanel [ngClass]="{ 'active': activeSection === 'privacy' }"
+                    [style.maxHeight]="getPanelHeight('privacy')">
+                    <strong>1. Mục đích thu thập thông tin</strong><br>
+                    <p>Petopia Spa thu thập thông tin cá nhân của khách hàng nhằm phục vụ cho các mục đích sau:</p>
+                    <ul>
+                        <li>Xử lý đơn hàng: Đảm bảo việc giao hàng đúng thời gian và địa điểm.</li>
+                        <li>Chương trình khách hàng thân thiết: Duy trì tài khoản thành viên, cung cấp ưu đãi và chương
+                            trình khuyến mãi phù hợp.</li>
+                        <li>Cải thiện dịch vụ: Hỗ trợ chăm sóc khách hàng, tư vấn các gói dịch vụ phù hợp cho thú cưng.
+                        </li>
+                        <li>Bảo vệ quyền lợi khách hàng: Ngăn chặn các hành vi gian lận, bảo đảm an toàn giao dịch.</li>
+                    </ul>
+                    <strong>2. Phạm vi thu thập thông tin</strong><br>
+                    <p>Petopia Spa thu thập các thông tin sau từ khách hàng:</p>
+                    <ul>
+                        <li>Họ tên, số điện thoại, email, địa chỉ nhận hàng.</li>
+                        <li>Thông tin giao dịch như đơn hàng, lịch sử mua sắm.</li>
+                        <li>Dữ liệu cookies nhằm cải thiện trải nghiệm người dùng trên website.</li>
+                    </ul>
+                    <strong>3. Bảo mật thông tin</strong><br>
+                    <ul>
+                        <li>Petopia Spa cam kết không chia sẻ thông tin khách hàng cho bên thứ ba trừ khi có yêu cầu từ
+                            cơ
+                            quan pháp luật.</li>
+                        <li>Chúng tôi sử dụng các biện pháp bảo mật nhằm đảm bảo thông tin khách hàng không bị truy cập
+                            trái
+                            phép.</li>
+                    </ul>
+                    <strong>4. Quyền lợi của khách hàng</strong><br>
+                    <ul>
+                        <li>Khách hàng có quyền yêu cầu chỉnh sửa hoặc xóa thông tin cá nhân.</li>
+                        <li>Nếu khách hàng không muốn nhận email quảng cáo, có thể hủy đăng ký theo hướng dẫn.</li>
+                    </ul>
+                    <strong>5. Thời gian lưu trữ thông tin</strong><br>
+                    <p>Thông tin khách hàng được lưu trữ cho đến khi khách hàng yêu cầu xóa hoặc ngừng sử dụng dịch vụ.
+                    </p>
+                    <strong>6. Liên hệ</strong><br>
+                    <p>Mọi thắc mắc về chính sách bảo mật, vui lòng liên hệ Zalo 999 999 999 để được hỗ trợ.</p>
+                </div>
+            </div>
+            <div id="return">
+                <button class="accordion" (click)="toggleSection('return')">
+                    <i class="fas fa-sync-alt"></i> Chính sách đổi trả
+                </button>
+                <div class="panel" #returnPanel [ngClass]="{ 'active': activeSection === 'return' }"
+                    [style.maxHeight]="getPanelHeight('return')">
+                    <p>Petopia Spa cam kết mang đến những sản phẩm và dịch vụ chất lượng cho thú cưng. Nếu có bất kỳ
+                        vấn đề nào liên quan đến sản phẩm, khách hàng có thể yêu cầu đổi trả theo chính sách sau:</p>
+                    <strong>1. Chính sách đổi trả</strong><br>
+                    <p>Khách hàng có thể đổi trả sản phẩm trong các trường hợp sau:</p>
+                    <ul>
+                        <li>Sản phẩm bị lỗi từ nhà sản xuất, hư hỏng trong quá trình vận chuyển.</li>
+                        <li>Giao sai sản phẩm so với đơn đặt hàng.</li>
+                        <li>Sản phẩm còn nguyên tem, nhãn mác, chưa qua sử dụng (có hình ảnh/video chứng minh).</li>
+                    </ul>
+                    <p>Khách hàng cần liên hệ với Petopia Spa qua Zalo 0909260580 để được hỗ trợ đổi trả.</p>
+                    <strong>2. Điều kiện đổi trả</strong><br>
+                    <ul>
+                        <li>Thời gian đổi trả: Trong vòng 2 ngày (TP.HCM) và 5 ngày (tỉnh thành khác) kể từ khi nhận
+                            hàng.
+                            Sản phẩm đổi trả phải còn đầy đủ bao bì, phụ kiện, chưa qua sử dụng.</li>
+                        <li>Không áp dụng đổi trả với các sản phẩm khuyến mãi hoặc giảm giá.</li>
+                    </ul>
+                    <strong>3. Cách thức đổi trả</strong><br>
+                    <p>Khách hàng có thể đổi trả sản phẩm theo các bước sau:</p>
+                    <ul>
+                        <li>Liên hệ Petopia Spa qua Zalo 999 999 999, cung cấp thông tin sản phẩm và lý do đổi trả.</li>
+                        <li>Gửi sản phẩm về địa chỉ được hướng dẫn (nếu cần).</li>
+                        <li>Kiểm tra sản phẩm: Petopia Spa xác nhận tình trạng sản phẩm.</li>
+                        <li>Hoàn tất đổi trả: Khách hàng nhận sản phẩm thay thế hoặc được hoàn tiền (tùy theo từng
+                            trường
+                            hợp).</li>
+                    </ul>
+                    <strong>4. Phí đổi trả</strong><br>
+                    <ul>
+                        <li>Petopia Spa chịu phí đổi trả nếu lỗi thuộc về sản phẩm (hỏng hóc, giao nhầm).</li>
+                        <li>Khách hàng chịu phí vận chuyển nếu đổi trả vì lý do cá nhân.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="delivery">
+                <button class="accordion" (click)="toggleSection('return')">
+                    <i class="fas fa-sync-alt"></i> Chính sách vận chuyển, giao nhận
+                </button>
+                <div class="panel" #returnPanel [ngClass]="{ 'active': activeSection === 'delivery' }"
+                    [style.maxHeight]="getPanelHeight('delivery')">
+                    <p>Petopia Spa hỗ trợ giao hàng trên toàn quốc, đảm bảo sản phẩm và dịch vụ đến tay khách hàng nhanh
+                        chóng, an toàn.</p>
+                    <strong>1. Đối với các đơn hàng nội thành TP. Hồ Chí Minh</strong><br>
+                    <p>Petopia Spa cung cấp nhiều lựa chọn giao hàng phù hợp với nhu cầu của khách hàng:</p>
+                    <ul>
+                        <li>Giao hàng tiêu chuẩn: Thời gian từ 1-2 ngày tùy khu vực.</li>
+                        <li>Giao hàng nhanh: Nhận hàng trong 24h.</li>
+                        <li>Giao hàng hỏa tốc (4H): Áp dụng cho đơn hàng xác nhận trong khung giờ 9:00 - 15:30 (nhận hàng trong
+                            4-6 tiếng).</li>
+                            <ul>
+                                <li>Chỉ áp dụng cho đơn COD dưới 1 triệu đồng hoặc đã thanh toán trước.</li>
+                                <li>Khu vực hỗ trợ: Quận 1, 3, 4, 5, 6, 7, 8, 10, 11, Phú Nhuận, Bình Thạnh, Tân Bình, Gò Vấp, Tân Phú,
+                                    TP. Thủ Đức.</li>
+                                <li>Phí giao hàng: Từ 20.000đ (tùy khoảng cách).</li>
+                            </ul>
+                    </ul>
+                    <strong>2. Đối với các đơn hàng tại các tỉnh thành khác</strong><br>
+                    <ul>
+                        <li>Giao hàng qua các đơn vị vận chuyển uy tín như GHN, Viettel Post.</li>
+                        <li>Thời gian giao hàng: Từ 2-5 ngày tùy vào địa điểm và hình thức vận chuyển.</li>
+                        <li>Phí vận chuyển sẽ được thông báo khi đặt hàng.</li>
+                    </ul>
+                    <strong>3. Lưu ý chung</strong><br>
+                    <ul>
+                        <li>Chi phí giao hàng có thể thay đổi tùy vào trọng lượng hàng hóa, địa điểm nhận hàng và chính sách của
+                            đơn vị vận chuyển.</li>
+                        <li>Nếu cần giao gấp, vui lòng liên hệ Zalo 999 999 999 để được hỗ trợ.</li>
+                    </ul>
              </div>
- 
-             <div id="return">
-                 <button class="accordion" (click)="toggleSection('return')">
-                     <i class="fas fa-sync-alt"></i> Chính sách đổi trả
-                 </button>
-                 <div class="panel" [ngClass]="{ 'active': activeSection === 'return' }" [style.maxHeight]="activeSection === 'return' ? panelHeight : '0'">
-                     <p>Bạn có thể đổi trả sản phẩm trong vòng 7 ngày nếu có lỗi từ nhà sản xuất.</p>
-                 </div>
-             </div>
- 
-             <div id="terms">
-                 <button class="accordion" (click)="toggleSection('terms')">
-                     <i class="fas fa-file-contract"></i> Điều khoản sử dụng
-                 </button>
-                 <div class="panel" [ngClass]="{ 'active': activeSection === 'terms' }" [style.maxHeight]="activeSection === 'terms' ? panelHeight : '0'">
-                     <p>Việc sử dụng dịch vụ của chúng tôi đồng nghĩa với việc bạn chấp nhận các điều khoản dưới đây...</p>
-                 </div>
-             </div>
-         </div>
-     </div>
- </body>
- </html>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

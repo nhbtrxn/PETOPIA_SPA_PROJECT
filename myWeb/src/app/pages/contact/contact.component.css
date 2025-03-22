@@ -50,3 +50,37 @@ body {
 .mt-4 {
     margin-top: 1rem;
 }
+@media (max-width: 768px) {
+    .container {
+        margin-top: 10%;
+        padding: 1rem;
+    }
+
+
+    .flex {
+        flex-direction: column !important;
+    }
+
+
+    .bg-dark, .bg-light {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+
+
+
+

@@ -13,7 +13,7 @@
 }
 .btn-booking {
      position: absolute;
-     margin-top:200px;
+     margin-top:120%;
      left: 50%;
      width:50%;
      transform: translateX(-50%);

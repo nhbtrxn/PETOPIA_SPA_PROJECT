@@ -1,20 +1,24 @@
 
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
 body {
     font-family: 'Work Sans', sans-serif;
-    background-color: #e3ccbd;
+    background-color: white;
     margin-top: 12%;
 }
+
 
 .container {
     display: flex;
     height: auto;
 }
+
 
 .sidebar {
     width: 20%;
@@ -25,14 +29,17 @@ body {
     margin: 10px;
 }
 
+
 .sidebar ul {
     list-style: none;
     padding: 0;
 }
 
+
 .sidebar ul li {
     margin: 10px 0;
 }
+
 
 .sidebar ul li a {
     color: white;
@@ -44,10 +51,12 @@ body {
     transition: background-color 0.3s, transform 0.2s;
 }
 
+
 .sidebar ul li a:hover {
     background-color: #b68d5f;
     transform: scale(1.05);
 }
+
 
 .faq-wrapper {
     width: 80%;
@@ -59,12 +68,14 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+
 h2 {
     font-size: 30px;
     color: #4f2b1a;
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 
 .accordion {
     background: #f2d470;
@@ -84,26 +95,36 @@ h2 {
     color: #4f2b1a;
 }
 
+
 .accordion:hover {
     background: #e0994c;
     transform: scale(1.02);
 }
 
+
 .panel {
     background: #fff8ee;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
+    transition: max-height 0.6s ease-out;
     margin-bottom: 10px;
     border-radius: 5px;
     padding: 0 20px;
 }
 
+
 .panel.active {
-    max-height: 200px;
+    max-height: none;
     padding: 10px 20px;
+    overflow: visible;
+
+
 }
+
 
 .panel p {
     padding: 15px 0;
 }
+
+
+

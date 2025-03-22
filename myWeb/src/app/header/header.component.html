@@ -14,8 +14,13 @@
                 <img src="https://i.imgur.com/QLkK8fa.png" alt="icon">
             </button>
         </div>
-        <div class="cart">
-            <a href=""><img src="https://i.imgur.com/JzrwIh9.png" alt="Giỏ hàng"></a>
+        <div class="cart-noti">
+            <div class="cart">
+                <a href=""><img src="https://i.imgur.com/JzrwIh9.png" alt="Giỏ hàng"></a>
+            </div>
+            <div class="noti">
+                <a href=""><img src="https://i.imgur.com/WYanHuD.png" alt="Thông báo"></a>
+            </div>
         </div>
         <div class="header-right-section">
             <div class="booking">
@@ -27,12 +32,6 @@
                     <h4>999.999.999</h4>
                 </div>
             </div>
-            <!-- <div class="greeting">
-                <div class="greeting-icon">
-                    <a routerLink="/login"><img src="https://i.imgur.com/bru6iBX.png" alt="User Avatar"></a>
-                </div>
-                <p>Xin chào, Tran</p>
-            </div> -->
             <div class="greeting">
                 <div class="greeting-icon">
                     <a *ngIf="!userName" routerLink="/login">
@@ -52,7 +51,20 @@
     <nav class="nav-bar" [class.show]="isMenuOpen">
         <a routerLink="/product-service" (click)="showServiceBar()">DỊCH VỤ & SẢN PHẨM</a>
         <a routerLink="/booking" (click)="showBar()">ĐẶT LỊCH</a>
-        <a routerLink="/forum" (click)="showBar()">DIỄN ĐÀN</a>
+        <div class="dropdown">
+            <a class="dropbtn" routerLink="/technology" (click)="showBar()">CÔNG NGHỆ AR/AI</a>
+            <div class="dropdown-content">
+                <a routerLink="/technology/AR">CÔNG NGHỆ AR</a>
+                <a routerLink="/technology/AI">CÔNG NGHỆ AI</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropbtn" routerLink="/forum" (click)="showBar()">DIỄN ĐÀN</a>
+            <div class="dropdown-content">
+                <a routerLink="/blog">BLOG</a>
+                <a routerLink="/experience">KINH NGHIỆM</a>
+            </div>
+        </div>          
         <a routerLink="/blog" (click)="showBar()">KINH NGHIỆM HAY</a>
         <a routerLink="/about" (click)="showBar()">GIỚI THIỆU</a>
         <a routerLink="/policy" (click)="showBar()">CHÍNH SÁCH</a>
@@ -62,7 +74,7 @@
     <div [ngSwitch]="displaybar">
         <div *ngSwitchCase="'service-bar'" class="product-service-bar">
             <nav>
-                <a href="#hotel-service">Dịch khách sạn thú cưng</a>
+                <a href="#hotel-service">Dịch vụ khách sạn thú cưng</a>
                 <a href="#spa-service">Dịch vụ spa</a>
                 <a href="#health-service">Dịch vụ chăm sóc sức khỏe</a>
                 <a href="#other-service">Dịch vụ khác</a>
