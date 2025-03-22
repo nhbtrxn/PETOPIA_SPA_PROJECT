@@ -20,10 +20,10 @@
         </div>
       </div>
   
-      <button class="btn btn-outline-secondary" (click)="nextFunction()" [disabled]="currentIndex + itemsPerPage >= products.length">>></button>
+      <button class="btn btn-outline-secondary" (click)="nextFunction()">>></button>
 
     </div>
     <div class="text-center mt-4"> 
-      <button type="button" class="btn btn-outline-secondary">Xem thêm</button>
+      <button type="button" class="btn btn-outline-secondary" (click)="goToProductService()">Xem thêm</button>
     </div>     
 </div>

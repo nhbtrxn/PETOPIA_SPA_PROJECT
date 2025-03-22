@@ -13,7 +13,7 @@ import { ServiceComponent } from '../service/service.component';
 export class ProductServiceComponent {
   isMenuOpen = false;
   activeSection: string | null = null;
-  choosenCategory: string = 'product-category'; 
+  choosenCategory: string = 'service-category'; 
 
   rotatedIcons: { [key: string]: boolean } = {
     'dog-product-bar': true,

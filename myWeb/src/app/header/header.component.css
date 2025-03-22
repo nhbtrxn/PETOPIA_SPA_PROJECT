@@ -80,6 +80,20 @@
     width: 30px;
     height: 30px;
 }
+.noti img {
+    width: 30px;
+    height: 30px;
+    transform: translateY(4px); 
+}
+.cart-noti{
+    display: flex; 
+    gap: 10px; 
+}
+
+.cart, .noti {
+    margin: 0;
+    width: auto;
+}
 .header-right-section {
     display: flex;
     align-items: center;
@@ -173,6 +187,41 @@
     color: white;
     cursor: pointer;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Hiện menu khi hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 @media screen and (max-width: 1024px) {
     .main-header {
@@ -192,6 +241,20 @@
         width: 20%;
         display: flex;
         justify-content: flex-end;
+    }
+    .noti {
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .cart-noti{
+        display: flex; 
+        gap: 10px; 
+    }
+    
+    .cart, .noti {
+        margin: 0;
+        width: auto;
     }
     .header-right-section {
         position: fixed;
@@ -229,6 +292,11 @@
         width: 60%;
     }
     .cart {
+        width: 10%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .noti {
         width: 10%;
         display: flex;
         justify-content: flex-end;
@@ -297,6 +365,15 @@
     }
     .nav-bar.show {
         transform: translateX(250px); 
+    }
+    .cart-noti{
+        display: flex; 
+        gap: 10px; 
+    }
+    
+    .cart, .noti {
+        margin: 0;
+        width: auto;
     }
 }
 

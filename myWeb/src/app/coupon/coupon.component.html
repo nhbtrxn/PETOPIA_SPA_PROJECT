@@ -1,0 +1,8 @@
+<div class="coupon-container">
+    <div class="coupon" *ngFor="let coupon of coupons">
+      <h3>{{ coupon.title }}</h3>
+      <p>{{ coupon.description }}</p>
+      <span class="coupon-code">{{ coupon.code }}</span>
+      <button class="copy-btn" (click)="copyCode(coupon.code)">SAO CHÉP MÃ</button>
+    </div>
+  </div>
