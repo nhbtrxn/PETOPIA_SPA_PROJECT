@@ -28,7 +28,7 @@ export class LoginComponent {
       password: this.password
     };
 
-    this.http.post('http://localhost:3000/login', loginData).subscribe({
+    this.http.post('http://localhost:3000/users/login', loginData).subscribe({
       next: (response: any) => {
         if (response.success) {
           alert('Đăng nhập thành công!');

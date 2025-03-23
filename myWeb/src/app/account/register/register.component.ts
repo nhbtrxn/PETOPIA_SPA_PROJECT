@@ -24,7 +24,7 @@ export class RegisterComponent {
       return;
     }
 
-    this.http.post('http://localhost:3000/check-account', { phone: this.phone, email: this.email }).subscribe({
+    this.http.post('http://localhost:3000/users/check-account', { phone: this.phone, email: this.email }).subscribe({
       next: (response: any) => {
         console.log("Kiểm tra tài khoản:", response);
         if (response.exists) {

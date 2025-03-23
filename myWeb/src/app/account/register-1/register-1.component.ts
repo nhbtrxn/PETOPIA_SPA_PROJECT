@@ -91,7 +91,7 @@ export class Register1Component {
       avatar: this.avatar
     };
 
-    this.http.post('http://localhost:3000/register', userData).subscribe({
+    this.http.post('http://localhost:3000/users/register', userData).subscribe({
       next: (response) => {
           console.log('Đăng ký thành công', response);
       },
