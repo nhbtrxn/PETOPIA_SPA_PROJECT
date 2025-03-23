@@ -229,10 +229,10 @@ app.get("/", (req, res) => {
 // Khởi động server
 app.listen(PORT, () => console.log(`Server đang chạy tại http://localhost:${PORT}`));
 
-mongoose.connect("mongodb://localhost:27017/petopia_spa", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+// mongoose.connect("mongodb://localhost:27017/petopia_spa", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
 
 app.post("/register", async (req, res) => {
     const { username, password, dob, phone, email, avatar } = req.body;
