@@ -6,6 +6,10 @@ const syncRoutes = require("./routes/syncRoutes");
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
+const { google } = require("googleapis");
+const User = require("./models/User");
+const multer = require("multer");
+const axios = require("axios");
 
 app.use(express.json());
 app.use(cors());
